@@ -5,10 +5,10 @@
     .component('rfcMonitorOptions', {
         restrict : 'E',
         templateUrl : 'app/widgets/rfc-monitor/rfc-monitor-options/rfc-monitor-options.html',
-        controller : monitorOptionsController
+        controller : rfcMonitorOptions
     } )
 
-  function monitorOptionsController () {
+  function rfcMonitorOptions () {
 
   }
 

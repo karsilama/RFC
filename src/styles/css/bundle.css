@@ -1,5 +1,16 @@
-.rfc-monitor .rfc-monitor--state {
-  min-width: 30px; }
+.rfc-monitor {
+  max-width: 480px;
+  margin: 0 auto; }
+  .rfc-monitor .rfc-monitor--state {
+    min-width: 30px; }
 
+.rfc-signatures-monitor {
+  min-width: 480px; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
 
 /*# sourceMappingURL=bundle.css.map */

@@ -1,48 +1,28 @@
 <table class="table table-striped rfc-monitor">
   <thead>
     <tr>
-      <th><strong>Function</strong></th>
-      <th><strong>Status</strong></th>
-      <th><strong>Options</strong></th>
+      <th width="45"><strong>Name</strong></th>
+      <th width="10" class="text-center"><strong>State</strong></th>
+      <th width="45" class="text-center"><strong>Options</strong></th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr ng-repeat="row in $ctrl.rows">
       <td>
-        <span>SQ_SDQWE_ASDASD_QWQEQWE_QWE</span>
+        <span ng-bind="row.name"></span>
       </td>
-      <td>
-        <span class="label label-warning">
-          <i class="rfc-monitor--state fa fa-warning"></i>
+      <td class="text-center">
+        <span class="label"
+            ng-class="{'label-warning':row.state=='warning',
+                        'label-danger':row.state=='danger',
+                        'label-success':row.state=='success'}">
+          <i class="rfc-monitor--state fa"
+          ng-class="{'fa-warning':row.state=='warning',
+                      'fa-fire':row.state=='danger',
+                      'fa-check':row.state=='success'}"></i>
         </span>
       </td>
-      <td>
-        <rfc-monitor-options></rfc-monitor-options>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span>SQ_SDQWE_ASDASD_QWQEQWE_QWE</span>
-      </td>
-      <td>
-        <span class="label label-danger">
-          <i class="rfc-monitor--state fa fa-fire"></i>
-        </span>
-      </td>
-      <td>
-        <rfc-monitor-options></rfc-monitor-options>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <span>SQ_SDQWE_ASDASD_QWQEQWE_QWE</span>
-      </td>
-      <td>
-        <span class="label label-success">
-          <i class="rfc-monitor--state fa fa-check"></i>
-        </span>
-      </td>
-      <td>
+      <td class="text-center">
         <rfc-monitor-options></rfc-monitor-options>
       </td>
     </tr>

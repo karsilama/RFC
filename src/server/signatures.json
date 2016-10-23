@@ -1,0 +1,14 @@
+[
+  { "aplication" : "Expense",
+    "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
+    "state" : "warning"
+  },
+  { "aplication" : "Expense",
+    "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
+    "state" : "warning"
+  },
+  { "aplication" : "Expense",
+    "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
+    "state" : "danger"
+  }
+]

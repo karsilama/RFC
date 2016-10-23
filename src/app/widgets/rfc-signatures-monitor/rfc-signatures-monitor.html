@@ -1,0 +1,55 @@
+<div class="rfc-signatures-monitor pull-left">
+  <h3 class="clearfix">
+    <small>Signatures
+      <a href="#">View All</a>
+    </small>
+  </h3>
+  <uib-accordion>
+    <div uib-accordion-group
+        ng-init="status.open=true"
+        class="panel-info"
+        is-open="status.open"
+        is-disabled="status.disabled">
+        <uib-accordion-heading>
+          <h4 class="clearfix">
+            <span ng-bind="$ctrl.rows[0].aplication" ></span>
+            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+          </h4>
+        </uib-accordion-heading>
+
+        <table class="table table-striped rfc-signatures-monitor--table">
+          <thead>
+            <tr>
+              <th width="45"><strong>Name</strong></th>
+              <th width="10" class="text-center"><strong>State</strong></th>
+              <th width="45" class="text-center"><strong>Options</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="row in $ctrl.rows">
+              <td>
+                <span ng-bind="row.name"></span>
+              </td>
+              <td>
+                <span ng-bind="row.aplication"></span>
+              </td>
+              <td class="text-center">
+                <span class="label"
+                    ng-class="{'label-warning':row.state=='warning',
+                                'label-danger':row.state=='danger',
+                                'label-success':row.state=='success'}">
+                  <i class="rfc-monitor--state fa"
+                  ng-class="{'fa-warning':row.state=='warning',
+                              'fa-fire':row.state=='danger',
+                              'fa-check':row.state=='success'}"></i>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+      </div>
+    </uib-accordion>
+
+  </div>

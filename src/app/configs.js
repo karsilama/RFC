@@ -15,5 +15,6 @@
           url : '/style-guide',
           templateUrl : '/pages/style-guide.html'
         })
-    }
+
+      }
 })()

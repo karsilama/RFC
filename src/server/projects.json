@@ -1,0 +1,10 @@
+[
+  { "name" : "L&S",
+    "state" : "warning" },
+  { "name" : "CP3",
+    "state" : "danger" },
+  { "name" : "YQC",
+    "state" : "success" },
+  { "name" : "MDQ",
+    "state" : "warning" }
+]

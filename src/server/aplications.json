@@ -1,0 +1,8 @@
+[
+  { "name" : "Expense",
+    "state" : "warning" },
+  { "name" : "TEA",
+    "state" : "warning" },
+  { "name" : "RQT",
+    "state" : "danger" }
+]
