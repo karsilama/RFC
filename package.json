@@ -1,0 +1,19 @@
+{
+  "name": "rfc",
+  "version": "1.0.0",
+  "description": "Web monitior service ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/karsilama/rfc.git"
+  },
+  "author": "jesus colavita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karsilama/rfc/issues"
+  },
+  "homepage": "https://github.com/karsilama/rfc#readme"
+}
