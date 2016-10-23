@@ -1,0 +1,95 @@
+<div class="jumbotron">
+  <h1>RFC Function Monitor</h1>
+  <div class="panel-group">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h3>Panel Header</h3></div>
+          <div class="panel-body">
+            <rfc-monitor></rfc-monitor>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h3>Panel Header</h3>
+        </div>
+          <div class="panel-body">
+            <rfc-monitor></rfc-monitor>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="clearfix">
+          <uib-accordion>
+            <div uib-accordion-group
+            ng-init="status.open=true"
+            class="panel-warning"
+            is-open="status.open"
+            is-disabled="status.disabled">
+            <uib-accordion-heading>
+              <h3 class="clearfix">
+                Warning monitors
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+              </h3>
+            </uib-accordion-heading>
+            <rfc-monitor></rfc-monitor>
+          </div>
+        </uib-accordion>
+        <a href="#" class="pull-right">View All</a>
+        </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="clearfix">
+            <uib-accordion>
+              <div uib-accordion-group
+              ng-init="status.open=true"
+              class="panel-danger"
+              is-open="status.open"
+              is-disabled="status.disabled">
+              <uib-accordion-heading>
+                <h3 class="clearfix">
+                  Danger monitors
+                  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                </h3>
+              </uib-accordion-heading>
+              <rfc-monitor></rfc-monitor>
+            </div>
+          </uib-accordion>
+          <a href="#" class="pull-right">View All</a>
+          </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="clearfix">
+          <br>
+          <uib-accordion>
+            <div uib-accordion-group
+            class="panel-success"
+            is-open="status.open"
+            is-disabled="status.disabled">
+            <uib-accordion-heading>
+              <h3 class="clearfix">
+                Success monitors
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+              </h3>
+            </uib-accordion-heading>
+            <rfc-monitor></rfc-monitor>
+          </div>
+        </uib-accordion>
+        <a href="#" class="pull-right">View All</a>
+        </div>
+      <div class="col-sm-6">
+      </div>
+    </div>
+
+    </div>
+
+</div>

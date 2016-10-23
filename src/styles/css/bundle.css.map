@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss","theme/default.scss"],"names":[],"mappings":"AAAA,AACE,YADU,CACV,mBAAmB,CAAC;EAClB,SAAS,EAAC,IACX,GAAC;;ACHJ","file":"bundle.css","sourcesContent":[".rfc-monitor{\n  .rfc-monitor--state {\n    min-width:30px\n  }\n}\n",""]}

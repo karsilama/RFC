@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="rfc">
+  <head>
+    <meta charset="utf-8">
+    <title>RFC | Function Monitor</title>
+
+    <!-- starts styles -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" media="screen">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" media="screen">
+    <link rel="stylesheet" href="styles/css/bundle.css" media="screen">
+    <!-- ends styles -->
+
+    <!-- starts scripts -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- ends scripts -->
+
+    <!-- starts app -->
+    <script src="app/modules.js"></script>
+    <script src="app/configs.js"></script>
+    <script src="app/widgets/rfc-monitor/rfc-monitor.js"></script>
+    <script src="app/widgets/rfc-monitor/rfc-monitor-options/rfc-monitor-options.js"></script>
+    <!-- ends scripts -->
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <br>
+      <div ui-view></div>
+    </div>
+  </body>
+</html>
