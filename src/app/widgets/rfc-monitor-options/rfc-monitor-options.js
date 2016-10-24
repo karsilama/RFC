@@ -27,6 +27,14 @@
       aplications : {
         update : true,
         remove : true
+      },
+      signatures : {
+        update : true,
+        remove : true
+      },
+      tests : {
+        update : true,
+        remove : true
       }
     }
 

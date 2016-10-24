@@ -1,51 +1,89 @@
-<div class="rfc-signatures-monitor pull-left">
-  <h3 class="clearfix capital">
-    <small ng-bind="$ctrl.name"></small>
-    <small><a href="#">View All</a></small>
-  </h3>
-  <uib-accordion>
-    <div uib-accordion-group
-        ng-init="status.open = ! $ctrl.collapsed"
-        class="panel-info"
-        is-open="status.open"
-        is-disabled="status.disabled">
-        <uib-accordion-heading>
-          <h4 class="clearfix">
-            <span ng-bind="$ctrl.rows[0].aplication" ></span>
-            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-          </h4>
-        </uib-accordion-heading>
+<div class="clearfix {{ $ctrl.classes }}"
+    ng-if="$ctrl.myAccordions.length > 0">
+  <div class="clearfix" ng-repeat="myAccord in $ctrl.myAccordions">
 
-        <table class="table table-striped rfc-signatures-monitor--table">
-          <thead>
-            <tr>
-              <th width="45"><strong>Function</strong></th>
-              <th width="10" class="text-center"><strong>State</strong></th>
-              <th ng-if="$ctrl.options"><strong>Options</strong></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="row in $ctrl.rows">
-              <td>
-                <span ng-bind="row.name"></span>
-              </td>
-              <td class="text-center">
-                <span class="label"
-                    ng-class="{'label-warning':row.state=='warning',
-                                'label-danger':row.state=='danger',
-                                'label-success':row.state=='success'}">
-                  <i class="rfc-monitor--state fa"
-                  ng-class="{'fa-warning':row.state=='warning',
-                              'fa-fire':row.state=='danger',
-                              'fa-check':row.state=='success'}"></i>
-                </span>
-              </td>
-              <td ng-if="$ctrl.options">
-                <rfc-monitor-options name="{{$ctrl.name}}"></rfc-monitor-options>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </uib-accordion>
+    <!--starts heading -->
+    <h3 class="clearfix capital">
+      <small ng-bind="myAccord.name"></small>
+      <small><a href="#">View All</a></small>
+    </h3>
+    <!--ends heading -->
+
+    <!--starts accord -->
+    <uib-accordion>
+      <div uib-accordion-group
+          ng-init="status.open=!$ctrl.collapsed"
+          class="panel-info"
+          is-open="status.open"
+          is-disabled="status.disabled">
+          <uib-accordion-heading>
+            <h4 class="clearfix">
+              <span ng-bind="myAccord.name"></span>
+              <i class="pull-right glyphicon"
+                ng-class="{'glyphicon-chevron-down': status.open,
+                            'glyphicon-chevron-right': !status.open}"></i>
+            </h4>
+          </uib-accordion-heading>
+          <table class="table table-striped rfc-function-monitor--table">
+
+            <!-- starts heading table -->
+            <thead>
+              <tr>
+                  <th ng-repeat="th in $ctrl.rowsHeading">
+                    <strong classs="capital" ng-bind="th"></strong>
+                  </th>
+              </tr>
+            </thead>
+            <!-- ends heading table -->
+
+            <!-- starts body table -->
+            <tbody>
+              <tr ng-repeat="row in myAccord.functions">
+
+                <!-- starts watch this function -->
+                <td class="text-center" ng-if="$ctrl.showField('checked')">
+                  <span class="btn btn-default btn-xs"
+                      ng-click="$ctrl.toggleWatch()">
+                      <i class="fa"
+                            ng-class="{'fa-check-square-o' : row.checked==='true',
+                                      'fa-square-o' : row.checked==='false'}"></i>
+                  </span>
+                </td>
+                <!-- endss watch this function -->
+
+                <!-- starts name function -->
+                <td ng-if="$ctrl.showField('name')">
+                  <span ng-bind="row.name"></span>
+                </td>
+                <!-- starts name function -->
+
+                <!-- starts status function -->
+                <td class="text-center">
+                  <span class="label"
+                      ng-class="{'label-warning':row.state=='warning',
+                                  'label-danger':row.state=='danger',
+                                  'label-success':row.state=='success'}">
+                    <i class="rfc-monitor--state fa"
+                    ng-class="{'fa-warning':row.state=='warning',
+                                'fa-fire':row.state=='danger',
+                                'fa-check':row.state=='success'}"></i>
+                  </span>
+                </td>
+                <!-- ends status function -->
+
+                <!-- starts options function -->
+                <td class="text-center" ng-if="$ctrl.showField('options')">
+                  <rfc-monitor-options name="{{$ctrl.name}}"></rfc-monitor-options>
+                </td>
+                <!-- starts options function -->
+
+              </tr>
+            </tbody>
+            <!-- starts body table -->
+
+          </table>
+        </div>
+      </uib-accordion>
+      <!--endss accord -->
+    </div>
   </div>

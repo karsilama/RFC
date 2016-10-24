@@ -5,7 +5,9 @@
     .component('rfcFunctionsMonitor', {
         bindings : {
           name : '@',
-          collapsed : '='
+          collapsed : '=',
+          classes : '@',
+          fields : '@'
         },
         restrict : 'E',
         templateUrl : 'app/widgets/rfc-functions-monitor/rfc-functions-monitor.html',
@@ -18,11 +20,29 @@
 
     var vm = this ;
 
-        rfcResolve
-            .get('server/signatures.json' )
-            .then(function(data){
-              vm.rows = data ;
-            }) ;
+    vm.rowsHeading = vm.fields.split(',') ;
+
+    vm.toggleWatch = toggleWatch ;
+    vm.showField = showField ;
+
+    function toggleWatch(){
+        console.log('toggle watcher function') ;
+     }
+
+    function showField(field) {
+      return vm.rowsHeading.indexOf(field) >= 0
+    }
+
+    return function () {
+
+      rfcResolve
+        .get('server/' + vm.name + '.json' )
+        .then(function(data){
+          vm.myAccordions = data ;
+        }) ;
+
+    }()
+
 
 
   }

@@ -1,4 +1,5 @@
-$monitorWitdh : 480px ;
+$smWidth : 480px ;
+$mdWidth : 640px ;
 
 .rfc-header{
   h1 {
@@ -6,14 +7,14 @@ $monitorWitdh : 480px ;
   }
 }
 
-.rfc-main-monitor{
-  max-width:$monitorWitdh ;
+.rfc-main-monitor {
+  max-width:$smWidth ;
   margin:0 auto ;
   .rfc-main-monitor--state {
     min-width:30px
   }
 }
 
-.rfc-function-monitor{
-  min-width:$monitorWitdh
+.rfc-function-monitor__control-width {
+  max-width:$mdWidth ;
 }

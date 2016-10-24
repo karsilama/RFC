@@ -1,0 +1,10 @@
+<div class="clearfix" ng-cloak>
+  <ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+
+    <li ng-repeat="item in $ctrl.combos">
+        <rfc-breadcrumb-combo name="{{item}}"></rfc-breadcrumb-combo>
+    </li>
+
+  </ol>
+</div>

@@ -1,14 +1,40 @@
 [
-  { "aplication" : "Expense",
-    "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
-    "state" : "warning"
+  {
+    "name" : "Expense",
+    "functions" : [
+      {
+        "checked" : "true",
+        "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
+        "state" : "warning"
+      },
+      {
+        "checked" : "false",
+        "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
+        "state" : "warning"
+      } ,{
+        "checked" : "true",
+        "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
+        "state" : "danger"
+      }
+    ]
   },
-  { "aplication" : "Expense",
-    "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
-    "state" : "warning"
-  },
-  { "aplication" : "Expense",
-    "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
-    "state" : "danger"
+  {
+    "name" : "Lift & Shift",
+    "functions" : [
+      {
+        "checked" : "true",
+        "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
+        "state" : "warning"
+      },
+      {
+        "checked" : "false",
+        "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
+        "state" : "warning"
+      } ,{
+        "checked" : "true",
+        "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
+        "state" : "danger"
+      }
+    ]
   }
 ]

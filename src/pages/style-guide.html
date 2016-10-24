@@ -1,11 +1,22 @@
+
+<br>
+<hr>
+
+<!-- starts breadcrumb -->
+<rfc-breadcrumb></rfc-breadcrumb>
+<!-- ends breadcrumb -->
+
+<!-- start header -->
 <div class="container">
   <div class="jumbotron">
     <rfc-monitor name="projects"></rfc-monitor>
   </div>
 </div>
+<!-- start header -->
 
 <hr>
 
+<!-- start main monitor ENVIROMENTS / APLICATIONS -->
 <div class="container">
   <div class="jumbotron">
       <div class="row">
@@ -18,15 +29,47 @@
       </div>
   </div>
 </div>
+<!-- ends main monitor ENVIROMENTS / APLICATIONS -->
 
 <hr>
 
+<!-- starts SIGNATURES monitor -->
 <div class="container">
-    <rfc-functions-monitor name="signatures" collapsed="false"></rfc-signatures-monitor>
+    <div class="jumbotron">
+      <rfc-functions-monitor
+          name="signatures"
+          collapsed="false"
+          classes="rfc-function-monitor__control-width"
+          fields="name,status"></rfc-signatures-monitor>
+    </div>
 </div>
+<!-- ends SIGNATURES monitor -->
+
 
 <hr>
 
+<!-- starts TESTS monitor -->
 <div class="container">
-    <rfc-functions-monitor name="tests" collapsed="true"></rfc-functions-monitor>
+    <div class="jumbotron">
+      <rfc-functions-monitor
+            name="tests"
+            collapsed="true"
+            classes="rfc-function-monitor__control-width"
+            fields="name,status"></rfc-functions-monitor>
+    </div>
 </div>
+<!-- ENDSs TESTS monitor -->
+
+
+<hr>
+
+<!-- starts TESTS monitor -->
+<div class="container">
+  <div class="jumbotron">
+    <rfc-functions-monitor
+          name="signatures"
+          collapsed="false"
+          fields="checked,name,status,options"></rfc-functions-monitor>
+  </div>
+</div>
+<!-- ENDSs TESTS monitor -->
