@@ -5,7 +5,7 @@
     .component('rfcFunctionsMonitor', {
         bindings : {
           name : '@',
-          collapsed : '=collapsed'
+          collapsed : '='
         },
         restrict : 'E',
         templateUrl : 'app/widgets/rfc-functions-monitor/rfc-functions-monitor.html',
