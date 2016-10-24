@@ -1,0 +1,11 @@
+<a href="#" class="capital push-right" ng-bind="$ctrl.name"></a>
+<div class="btn-group" uib-dropdown>
+  <button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+    <span ng-bind="$ctrl.selected.name"></span>
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+    <li role="menuitem" ng-repeat="item in $ctrl[$ctrl.name]">
+      <a ng-click="$ctrl.selected=item" href="#" ng-bind="item.name"></a></li>
+  </ul>
+</div>
