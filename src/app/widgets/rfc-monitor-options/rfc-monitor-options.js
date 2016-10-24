@@ -27,7 +27,7 @@
       aplications : {
         update : true,
         remove : true
-      },
+      }
     }
 
   }

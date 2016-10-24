@@ -4,7 +4,8 @@
     .module('rfc')
     .component('rfcFunctionsMonitor', {
         bindings : {
-          name : '@'
+          name : '@',
+          collapsed : '=collapsed'
         },
         restrict : 'E',
         templateUrl : 'app/widgets/rfc-functions-monitor/rfc-functions-monitor.html',

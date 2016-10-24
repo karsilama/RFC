@@ -1,12 +1,12 @@
 <div class="rfc-signatures-monitor pull-left">
   <h3 class="clearfix">
-    <small>Signatures
+    <small ng-bind="$ctrl.name">
       <a href="#">View All</a>
     </small>
   </h3>
   <uib-accordion>
     <div uib-accordion-group
-        ng-init="status.open=true"
+        ng-init="status.open = ! $ctrl.collapsed"
         class="panel-info"
         is-open="status.open"
         is-disabled="status.disabled">
@@ -20,7 +20,7 @@
         <table class="table table-striped rfc-signatures-monitor--table">
           <thead>
             <tr>
-              <th width="45"><strong>Name</strong></th>
+              <th width="45"><strong>Function</strong></th>
               <th width="10" class="text-center"><strong>State</strong></th>
               <th ng-if="$ctrl.options"><strong>Options</strong></th>
             </tr>
