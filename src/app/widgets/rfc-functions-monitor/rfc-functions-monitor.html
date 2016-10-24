@@ -22,16 +22,13 @@
             <tr>
               <th width="45"><strong>Name</strong></th>
               <th width="10" class="text-center"><strong>State</strong></th>
-              <th width="45" class="text-center"><strong>Options</strong></th>
+              <th ng-if="$ctrl.options"><strong>Options</strong></th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="row in $ctrl.rows">
               <td>
                 <span ng-bind="row.name"></span>
-              </td>
-              <td>
-                <span ng-bind="row.aplication"></span>
               </td>
               <td class="text-center">
                 <span class="label"
@@ -44,12 +41,12 @@
                               'fa-check':row.state=='success'}"></i>
                 </span>
               </td>
+              <td ng-if="$ctrl.options">
+                <rfc-monitor-options name="{{$ctrl.name}}"></rfc-monitor-options>
+              </td>
             </tr>
           </tbody>
         </table>
-
-
       </div>
     </uib-accordion>
-
   </div>

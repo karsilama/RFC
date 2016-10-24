@@ -1,13 +1,19 @@
 $monitorWitdh : 480px ;
 
-.rfc-monitor{
+.rfc-header{
+  h1 {
+    font-size:1em ;
+  }
+}
+
+.rfc-main-monitor{
   max-width:$monitorWitdh ;
   margin:0 auto ;
-  .rfc-monitor--state {
+  .rfc-main-monitor--state {
     min-width:30px
   }
 }
 
 .rfc-signatures-monitor{
-  min-width:$monitorWitdh  
+  min-width:$monitorWitdh
 }

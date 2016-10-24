@@ -1,0 +1,58 @@
+<div class="panel panel-default rfc-monitor">
+
+  <!-- starts heading -->
+  <div class="panel-heading">
+    <h3 class="clearfix">
+      <span class="capital" ng-bind="$ctrl.name"></span>
+      <buttons class="round pointer btn-info btn-xs pull-right"
+        ng-click="$ctrl.add()">
+        <i class="fa fa-plus"></i>
+      </button>
+    </h3>
+  </div>
+  <!-- ends heading -->
+
+  <div class="panel-body">
+    <table class="table table-striped rfc-monitor">
+
+      <!-- starts heading table -->
+      <thead>
+        <tr>
+          <th><strong>Name</strong></th>
+          <th class="text-center"><strong>State</strong></th>
+          <th class="text-center"><strong>Options</strong></th>
+        </tr>
+      </thead>
+      <!-- ends heading table -->
+
+      <!-- starts rows content -->
+      <tbody>
+        <tr ng-repeat="row in $ctrl.rows">
+          <td>
+            <span ng-bind="row.name"></span>
+          </td>
+          <td class="text-center">
+            <span class="label"
+                ng-class="{ 'label-warning' : row.state=='warning',
+                            'label-danger'  : row.state=='danger',
+                            'label-success' : row.state=='success'}">
+
+              <i class="rfc-monitor--state fa"
+              ng-class="{ 'fa-warning'  :row.state=='warning',
+                          'fa-fire'     :row.state=='danger',
+                          'fa-check'    :row.state=='success'}"></i>
+            </span>
+          </td>
+
+          <!-- starts table options -->
+          <td class="text-center">
+            <rfc-monitor-options name="{{$ctrl.name}}"></rfc-monitor-options>
+          </td>
+          <!-- ends table options -->
+        </tr>
+
+        <!-- ends rows content -->
+      </tbody>
+    </table>
+  </div>
+</div>
