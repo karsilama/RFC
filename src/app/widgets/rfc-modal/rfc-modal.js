@@ -19,6 +19,7 @@
         var vm= this;
 
         vm.data = vm.resolve.data;
+        
 
         vm.save = function() {
           vm.modalInstance.close(vm.data);

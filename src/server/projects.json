@@ -3,8 +3,6 @@
     "state" : "warning" },
   { "name" : "CP3",
     "state" : "danger" },
-  { "name" : "YQC",
-    "state" : "success" },
-  { "name" : "MDQ",
-    "state" : "warning" }
+  { "name" : "QAS",
+    "state" : "success" }
 ]
