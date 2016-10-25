@@ -21,10 +21,10 @@
     <tr ng-repeat="row in $ctrl.data.checkListTableRows">
       <th ng-if="$ctrl.data.enviroment">
         <span class="btn btn-default btn-xs"
-            ng-click="$ctrl.toggleWatch()">
+            ng-click="$ctrl.toggleCheck(row)">
             <i class="fa"
-                ng-class="{'fa-check-square-o' : row.checked==='true',
-                            'fa-square-o' : row.checked==='false'}"></i>
+                ng-class="{'fa-check-square-o' : row.checked,
+                            'fa-square-o' : ! row.checked}"></i>
         </span>
         <input type="hidden" name="{{$ctrl.data.nameForm}}.check" ng-model="row.checked">
       </td>
@@ -33,12 +33,12 @@
       </td>
       <td>
         <span class="btn btn-default btn-xs"
-            ng-click="$ctrl.toggleWatch()">
+            ng-click="$ctrl.toggleWatch(row)">
             <i class="fa"
-                ng-class="{'fa-check-square-o' : row.watch==='true',
-                            'fa-square-o' : row.watch==='false'}"></i>
+                ng-class="{'fa-check-square-o' : row.watch,
+                            'fa-square-o' : !row.watch}"></i>
         </span>
-        <input type="hidden" name="{{$ctrl.data.nameForm}}.check" ng-model="row.checked">
+        <input type="hidden" name="{{$ctrl.data.nameForm}}.watch" ng-model="row.watch">
       </td>
     </tr>
     <!-- ends rows content -->

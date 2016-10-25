@@ -14,11 +14,15 @@
   function rfcCheckListTable () {
 
     var vm = this ;
-    vm.showField = toggleWatch ;
+    vm.toggleWatch = toggleWatch ;
+    vm.toggleCheck = toggleCheck ;
 
+    function toggleWatch(item){
+        return item.watch = ! item.watch ;
+     }
 
-    function toggleWatch(){
-        console.log('toggle watcher function') ;
+    function toggleCheck(item){
+        return item.checked = ! item.checked ;
      }
 
     return function () {
