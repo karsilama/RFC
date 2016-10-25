@@ -20,10 +20,10 @@
 
     var vm = this ;
 
-    vm.rowsHeading = vm.fields.split(',') ;
-
     vm.toggleWatch = toggleWatch ;
     vm.showField = showField ;
+
+    vm.rowsHeading = vm.fields.split(',') ;
 
     function toggleWatch(){
         console.log('toggle watcher function') ;

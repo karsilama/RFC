@@ -7,27 +7,61 @@
 
     .module('rfc')
 
-    .component('rfcMonitor', {
+    .component('rfcMainMonitor', {
 
         bindings : {
-          name : '@'
+          name : '@',
+          enviroment : '=enviroment'
         },
 
         restrict : 'E',
         templateUrl : 'app/widgets/rfc-main-monitor/rfc-main-monitor.html',
-        controller : rfcMonitor
+        controller : rfcMainMonitor
     } )
 
-  rfcMonitor.$inject = ['rfcResolve', '$uibModal']  ;
+  rfcMainMonitor.$inject = ['rfcResolve', '$uibModal']  ;
 
-  function rfcMonitor (rfcResolve, $uibModal ) {
+  function rfcMainMonitor (rfcResolve, $uibModal ) {
 
     var vm = this ;
 
-    vm.add = function() {
-      var modalInstance = $uibModal.open( {
-          templateUrl: 'modal-'+vm.name+'.html'
-        } )
+    vm.add = add;
+    vm.save = save;
+
+    function save () {
+      console.log( ':: Saving ' + vm.name ) ;
+      // rfcResolve.save[vm.name]()
+      // rfcResolve.upadate[vm.name]()
+      // rfcResolve.delete[vm.name]()
+    }
+
+    function add() {
+      $uibModal.open( {
+        animation: true,
+        component: 'rfcModal',
+        resolve: {
+            data : function() {
+              return rfcResolve
+                        .get('server/list-enviroments.json')
+                        .then(function(data){
+                          return {
+                            enviroment : vm.enviroment,
+                            name : vm.name,
+                            nameForm : vm.name+'Form',
+                            checkListTableRows : data
+                          }
+                        })
+            }
+        },
+        controller: function($scope) {
+          $scope.title = vm.name;
+        }
+      } )
+      .result.then( function ( data ){
+        console.log( 'ok', data )
+      }, function ( message ) {
+        console.log('dismiss', message )
+      }  )
     }
 
     return function(){

@@ -3,13 +3,17 @@
 <hr>
 
 <!-- starts breadcrumb -->
+BREADCRUMB
 <rfc-breadcrumb></rfc-breadcrumb>
 <!-- ends breadcrumb -->
 
+<hr>
+
 <!-- start header -->
 <div class="container">
+  PROJECTS
   <div class="jumbotron">
-    <rfc-monitor name="projects"></rfc-monitor>
+    <rfc-main-monitor name="projects" enviroment="true"></rfc-main-monitor>
   </div>
 </div>
 <!-- start header -->
@@ -18,13 +22,14 @@
 
 <!-- start main monitor ENVIROMENTS / APLICATIONS -->
 <div class="container">
+  ENVS / APPS
   <div class="jumbotron">
       <div class="row">
         <div class="col-sm-6">
-          <rfc-monitor name="enviroments"></rfc-monitor>
+          <rfc-main-monitor name="enviroments" enviroment="false"></rfc-main-monitor>
         </div>
         <div class="col-sm-6">
-          <rfc-monitor name="aplications"></rfc-monitor>
+          <rfc-main-monitor name="aplications" enviroment="true"></rfc-main-monitor>
         </div>
       </div>
   </div>
@@ -35,6 +40,7 @@
 
 <!-- starts SIGNATURES monitor -->
 <div class="container">
+  SIGNATURES
     <div class="jumbotron">
       <rfc-functions-monitor
           name="signatures"
@@ -50,6 +56,7 @@
 
 <!-- starts TESTS monitor -->
 <div class="container">
+  TESTS
     <div class="jumbotron">
       <rfc-functions-monitor
             name="tests"
@@ -65,6 +72,7 @@
 
 <!-- starts TESTS monitor -->
 <div class="container">
+  SIGNATURES
   <div class="jumbotron">
     <rfc-functions-monitor
           name="signatures"
@@ -72,4 +80,4 @@
           fields="checked,name,status,options"></rfc-functions-monitor>
   </div>
 </div>
-<!-- ENDSs TESTS monitor -->
+<!-- ends TESTS monitor -->

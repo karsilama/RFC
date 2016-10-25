@@ -1,16 +1,15 @@
-{{$ctrl.name}}
-<div class="rfc-modal">
-  <script type="text/ng-template" id="modal-{{$ctrl.name}}.html">
-      <div class="modal-header">
-          <h3 class="modal-title">I'm a modal!</h3>
-      </div>
-      <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-        <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">Save</button>
-        <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">Save & Open</button>
-      </div>
-  </script>
-</div>
+<!-- starts modals -->
+    <div class="modal-header">
+        <h3 class="modal-title capital" ng-bind="$ctrl.data.name"></h3>
+    </div>
+    <div class="modal-body">
+      <div ng-include="'app/widgets/rfc-modal/modal-content-'+$ctrl.data.name+'.html'"></div>  
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-warning" type="button" ng-click="$ctrl.save()">Save</button>
+      <button type="button"
+              class="btn btn-primary"
+              ng-click="$ctrl.close()">Close</button>
+    </div>
+  </form>
+<!-- starts modals -->

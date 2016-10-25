@@ -1,24 +1,34 @@
-(function (){
-  'use stric';
+(function(){
+
+  'use strict';
 
   angular
+
     .module('rfc')
+
     .component('rfcModal', {
 
       bindings : {
-          name : '='
+        modalInstance: "<",
+        resolve: "<"
       },
 
-      restrict : 'E',
       templateUrl : 'app/widgets/rfc-modal/rfc-modal.html',
-      controller : rfcModal
 
-    } )
+      controller : function () {
+        var vm= this;
 
-    rfcModal.$inject = ['$scope', '$uibModal'];
+        vm.data = vm.resolve.data;
 
-    function rfcModal( ) {
+        vm.save = function() {
+          vm.modalInstance.close(vm.data);
+        };
 
-    }
+        vm.close = function() {
+          vm.modalInstance.dismiss("close");
+        };
 
-})() ;
+      }
+  } )
+
+} )() ;

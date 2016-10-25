@@ -1,11 +1,17 @@
 [
   {
-    "name" : "L&S"
+    "name" : "L&S",
+    "watch" : "true",
+    "checked" : "true"
   },
   {
-    "name" : "CP3"
+    "name" : "CP3",
+    "watch" : "true",
+    "checked" : "false"
   },
   {
-    "name" : "QAS"
+    "name" : "QAS",
+    "watch" : "true",
+    "checked" : "true"
   }
 ]

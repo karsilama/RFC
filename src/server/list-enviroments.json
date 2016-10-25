@@ -1,11 +1,17 @@
 [
   {
-    "name" : "Expense"
+    "name" : "Staging",
+    "watch" : "true",
+    "checked" : "true"
   },
   {
-    "name" : "TEA"
+    "name" : "Production",
+    "watch" : "true",
+    "checked" : "true"
   },
   {
-    "name" : "RQT"
+    "name" : "Develoment",
+    "watch" : "true",
+    "checked" : "true"
   }
 ]

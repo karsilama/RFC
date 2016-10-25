@@ -1,0 +1,47 @@
+<table class="table table-responsive">
+
+  <!-- starts rows content -->
+  <thead>
+    <tr>
+        <th ng-if="$ctrl.data.enviroment">
+          <strong class="capital" ></strong>
+        </th>
+        <th>
+          <strong class="capital">Available Enviroments</strong>
+        </th>
+        <th>
+          <strong class="capital">Monitor</strong>
+        </th>
+    </tr>
+  </thead>
+  <!-- ends rows content -->
+
+  <!-- starts rows content -->
+  <tbody>
+    <tr ng-repeat="row in $ctrl.data.checkListTableRows">
+      <th ng-if="$ctrl.data.enviroment">
+        <span class="btn btn-default btn-xs"
+            ng-click="$ctrl.toggleWatch()">
+            <i class="fa"
+                ng-class="{'fa-check-square-o' : row.checked==='true',
+                            'fa-square-o' : row.checked==='false'}"></i>
+        </span>
+        <input type="hidden" name="{{$ctrl.data.nameForm}}.check" ng-model="row.checked">
+      </td>
+      <td>
+        <span ng-bind="row.name"></span>
+      </td>
+      <td>
+        <span class="btn btn-default btn-xs"
+            ng-click="$ctrl.toggleWatch()">
+            <i class="fa"
+                ng-class="{'fa-check-square-o' : row.watch==='true',
+                            'fa-square-o' : row.watch==='false'}"></i>
+        </span>
+        <input type="hidden" name="{{$ctrl.data.nameForm}}.check" ng-model="row.checked">
+      </td>
+    </tr>
+    <!-- ends rows content -->
+  </tbody>
+
+</table>

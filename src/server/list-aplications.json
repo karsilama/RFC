@@ -1,11 +1,17 @@
 [
   {
-    "name" : "Testing"
+    "name" : "Testing",
+    "watch" : "true",
+    "checked" : "true"
   },
   {
-    "name" : "QA"
+    "name" : "QA",
+    "watch" : "true","checked" : "true"
+
   },
   {
-    "name" : "Staging"
+    "name" : "Staging",
+    "watch" : "true",
+    "checked" : "true"
   }
 ]
