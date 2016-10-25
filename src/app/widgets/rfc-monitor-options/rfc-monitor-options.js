@@ -4,7 +4,10 @@
     .module('rfc')
     .component('rfcMonitorOptions', {
         bindings : {
-          name : '@'
+          name : '@',
+          item : '=',
+          update : '=',
+          remove : '='
         },
         restrict : 'E',
         templateUrl : 'app/widgets/rfc-monitor-options/rfc-monitor-options.html',

@@ -1,8 +1,8 @@
 <ul class="clearfix">
-  <li ng-if="$ctrl.options[$ctrl.name].update" class="btn btn-default btn-sm">
+  <li ng-if="$ctrl.options[$ctrl.name].update" ng-click="$ctrl.update($ctrl.item)" class="btn btn-default btn-sm">
       <i class="fa fa-pencil"></i>
   </li>
-  <li ng-if="$ctrl.options[$ctrl.name].remove" class="btn btn-default btn-sm">
+  <li ng-if="$ctrl.options[$ctrl.name].remove" ng-click="$ctrl.remove($ctrl.item)" class="btn btn-default btn-sm">
       <i class="fa fa-remove"></i>
   </li>
 </ul>

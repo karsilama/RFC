@@ -27,12 +27,22 @@
 
     vm.add = add;
     vm.save = save;
+    vm.update = update ;
+    vm.remove = remove ;
+
+    function update ( item ) {
+      console.log( ':: Updating ' + item.name )
+      // rfcResolve.upadate[vm.name]()
+    }
+
+    function remove ( item ) {
+      console.log( ':: Removing ' + item.name )
+      // rfcResolve.delete[vm.name]()
+    }
 
     function save () {
       console.log( ':: Saving ' + vm.name ) ;
       // rfcResolve.save[vm.name]()
-      // rfcResolve.upadate[vm.name]()
-      // rfcResolve.delete[vm.name]()
     }
 
     function add() {
@@ -45,6 +55,7 @@
                         .get('server/list-enviroments.json')
                         .then(function(data){
                           return {
+                            method : 'insert',
                             enviroment : vm.enviroment,
                             name : vm.name,
                             nameForm : vm.name+'Form',

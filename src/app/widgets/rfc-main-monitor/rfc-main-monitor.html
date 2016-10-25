@@ -46,7 +46,11 @@
 
           <!-- starts table options -->
           <td class="text-center">
-            <rfc-monitor-options name="{{$ctrl.name}}"></rfc-monitor-options>
+            <rfc-monitor-options
+              name="{{$ctrl.name}}"
+              update="$ctrl.update"
+              remove="$ctrl.remove"
+              item="row" ></rfc-monitor-options>
           </td>
           <!-- ends table options -->
         </tr>
