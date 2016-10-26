@@ -3,7 +3,7 @@
 
   angular
     .module('rfc')
-    .component('rfcHeader', {
+    .component('dteHeader', {
 
       bindings : {
 

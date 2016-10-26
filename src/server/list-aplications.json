@@ -2,17 +2,17 @@
   {
     "name" : "Expense",
     "watch" : "true",
-    "checked" : "true"
+    "isEnabled" : "true"
   },
   {
     "name" : "TEA",
     "watch" : "true",
-    "checked" : "true"
+    "isEnabled" : "true"
 
   },
   {
     "name" : "RQT",
     "watch" : "true",
-    "checked" : "true"
+    "isEnabled" : "true"
   }
 ]

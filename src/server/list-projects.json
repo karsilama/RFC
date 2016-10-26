@@ -2,16 +2,16 @@
   {
     "name" : "L&S",
     "watch" : "true",
-    "checked" : "true"
+    "isEnabled" : "true"
   },
   {
     "name" : "CP3",
     "watch" : "true",
-    "checked" : "false"
+    "isEnabled" : "false"
   },
   {
     "name" : "QAS",
     "watch" : "true",
-    "checked" : "true"
+    "isEnabled" : "true"
   }
 ]

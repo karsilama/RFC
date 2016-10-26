@@ -2,16 +2,16 @@
   {
     "name" : "Staging",
     "watch" : "true",
-    "checked" : "true"
+    "isEnabled" : "true"
   },
   {
     "name" : "Production",
     "watch" : "true",
-    "checked" : "true"
+    "isEnabled" : "true"
   },
   {
     "name" : "Develoment",
     "watch" : "true",
-    "checked" : "true"
+    "isEnabled" : "true"
   }
 ]

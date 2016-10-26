@@ -23,10 +23,10 @@
         <span class="btn btn-default btn-xs"
             ng-click="$ctrl.toggleCheck(row)">
             <i class="fa"
-                ng-class="{'fa-check-square-o' : row.checked,
-                            'fa-square-o' : ! row.checked}"></i>
+                ng-class="{'fa-check-square-o' : row.isEnabled,
+                            'fa-square-o' : ! row.isEnabled}"></i>
         </span>
-        <input type="hidden" name="{{$ctrl.data.nameForm}}.check" ng-model="row.checked">
+        <input type="hidden" name="{{$ctrl.data.nameForm}}.check" ng-model="row.isEnabled">
       </td>
       <td>
         <span ng-bind="row.name"></span>
