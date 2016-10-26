@@ -22,7 +22,7 @@
      }
 
     function toggleCheck(item){
-        return item.checked = ! item.checked ;
+        return item.isEnabled = ! item.isEnabled ;
      }
 
     return function () {

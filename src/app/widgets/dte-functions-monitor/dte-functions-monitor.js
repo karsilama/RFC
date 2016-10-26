@@ -5,6 +5,7 @@
     .component('dteFunctionsMonitor', {
         bindings : {
           name : '@',
+          functions : '=',
           collapsed : '=',
           classes : '@',
           fields : '@'
@@ -14,19 +15,19 @@
         controller : dteFunctionsMonitor
     } )
 
-  dteFunctionsMonitor.$inject = ['dteResolve']  ;
+  dteFunctionsMonitor.$inject = []  ;
 
-  function dteFunctionsMonitor ( dteResolve ) {
+  function dteFunctionsMonitor ( ) {
 
     var vm = this ;
 
-    vm.toggleChecked = toggleChecked ;
+    vm.toggleEnabled = toggleEnabled ;
     vm.showField = showField ;
 
     vm.rowsHeading = vm.fields.split(',') ;
 
-    function toggleChecked(item){
-      return item.checked = ! item.checked ;
+    function toggleEnabled(item){
+      return item.isEnabled = ! item.isEnabled ;
    }
 
     function showField(field) {
@@ -35,15 +36,9 @@
 
     return function () {
 
-      dteResolve
-        .get('server/' + vm.name + '.json' )
-        .then(function(data){
-          vm.myAccordions = data ;
-        }) ;
+      console.log( vm.functions )
 
     }()
-
-
 
   }
 

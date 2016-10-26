@@ -42,42 +42,60 @@ BREADCRUMB | Widget :: dte-breadcrumb <hr>
 <div class="container">
   SIGNATURES | Widget :: dteFunctionsMonitor <hr>
     <div class="jumbotron">
-      <dte-functions-monitor
-          name="signatures"
-          collapsed="false"
-          classes="dte-function-monitor__control-width"
-          fields="name,status"></dte-functions-monitor>
+
+      <div ng-repeat="item in vm.signatures">
+        <uib-accordion>
+          <div uib-accordion-group
+              ng-init="status.open=!$ctrl.collapsed"
+              class="panel-info"
+              is-open="status.open"
+              is-disabled="status.disabled">
+              <uib-accordion-heading>
+                <h4 class="clearfix">
+                  <span ng-bind="item.name"></span>
+                  <i class="pull-right glyphicon"
+                  ng-class="{'glyphicon-chevron-down': status.open,
+                  'glyphicon-chevron-right': !status.open}"></i>
+                </h4>
+              </uib-accordion-heading>
+              <dte-functions-monitor
+              name="{{item.name}}"
+              functions="item.functions"
+              collapsed="false"
+              classes="dte-function-monitor__control-width"
+              fields="name,state">
+            </dte-functions-monitor>
+          </div>
+        </uib-accordion>
+      </div>
+
     </div>
 </div>
 <!-- ends SIGNATURES monitor -->
-
 
 <hr>
 
 <!-- starts TESTS monitor -->
 <div class="container">
   TESTS | Widget :: functionsMonitor <hr>
-    <div class="jumbotron">
-      <dte-functions-monitor
-            name="tests"
-            collapsed="true"
-            classes="dte-function-monitor__control-width"
-            fields="name,status"></dte-functions-monitor>
-    </div>
+    <div class="jumbotron"></div>
 </div>
 <!-- ENDSs TESTS monitor -->
 
-
 <hr>
 
-<!-- starts TESTS monitor -->
+<!-- starts SIGNATURES DETAILS monitor -->
 <div class="container">
   SIGNATURES | Widget :: functionsMonitor <hr>
   <div class="jumbotron">
-    <dte-functions-monitor
-          name="signatures"
-          collapsed="false"
-          fields="checked,name,status,options"></dte-functions-monitor>
+    <div ng-repeat="item in vm.signatures">
+      <dte-functions-monitor
+      name="{{item.name}}"
+      functions="item.functions"
+      collapsed="false"
+      fields="isEnabled,name,state"></dte-functions-monitor>
+      <br>
+    </div>
   </div>
 </div>
 <!-- ends TESTS monitor -->

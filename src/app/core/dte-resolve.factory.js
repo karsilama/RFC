@@ -11,7 +11,16 @@
       function dteResolve($http,$q) {
 
         var factory = {
-          get : get
+          get : get, 
+          orderByKey : orderByKey
+        }
+
+        function orderByKey ( unOrdered , key) {
+          var ordered = {} ;
+          for ( var i in unOrdered ) {
+            ordered[unOrdered[i][key]] = unOrdered[i] ;
+          }
+          return ordered ;
         }
 
         function get(url) {

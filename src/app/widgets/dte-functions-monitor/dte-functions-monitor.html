@@ -1,89 +1,58 @@
-<div class="clearfix {{ $ctrl.classes }}"
-    ng-if="$ctrl.myAccordions.length > 0">
-  <div class="clearfix" ng-repeat="myAccord in $ctrl.myAccordions">
+  <table class="table table-striped dte-function-monitor--table">
 
-    <!--starts heading -->
-    <h3 class="clearfix capital">
-      <small ng-bind="myAccord.name"></small>
-      <small><a href="#">View All</a></small>
-    </h3>
-    <!--ends heading -->
+    <!-- starts heading table -->
+    <thead>
+      <tr>
+          <th ng-repeat="th in $ctrl.rowsHeading">
+            <strong class="capital" ng-bind="th"></strong>
+          </th>
+      </tr>
+    </thead>
+    <!-- ends heading table -->
 
-    <!--starts accord -->
-    <uib-accordion>
-      <div uib-accordion-group
-          ng-init="status.open=!$ctrl.collapsed"
-          class="panel-info"
-          is-open="status.open"
-          is-disabled="status.disabled">
-          <uib-accordion-heading>
-            <h4 class="clearfix">
-              <span ng-bind="myAccord.name"></span>
-              <i class="pull-right glyphicon"
-                ng-class="{'glyphicon-chevron-down': status.open,
-                            'glyphicon-chevron-right': !status.open}"></i>
-            </h4>
-          </uib-accordion-heading>
-          <table class="table table-striped dte-function-monitor--table">
+    <!-- starts body table -->
+    <tbody>
+      <tr ng-repeat="function in $ctrl.functions">
 
-            <!-- starts heading table -->
-            <thead>
-              <tr>
-                  <th ng-repeat="th in $ctrl.rowsHeading">
-                    <strong class="capital" ng-bind="th"></strong>
-                  </th>
-              </tr>
-            </thead>
-            <!-- ends heading table -->
+        <!-- starts watch this function -->
+        <td class="text-center" ng-if="$ctrl.showField('isEnabled')">
+          <span class="btn btn-default btn-xs"
+              ng-click="$ctrl.toggleEnabled(function)">
+              <i class="fa"
+                    ng-class="{'fa-check-square-o' : function.isEnabled,
+                              'fa-square-o' : !function.isEnabled}"></i>
+          </span>
+        </td>
+        <!-- endss watch this function -->
 
-            <!-- starts body table -->
-            <tbody>
-              <tr ng-repeat="row in myAccord.functions">
+        <!-- starts name function -->
+        <td ng-if="$ctrl.showField('name')">
+          <a href="#" ng-bind="function.name"></a>
+        </td>
+        <!-- starts name function -->
 
-                <!-- starts watch this function -->
-                <td class="text-center" ng-if="$ctrl.showField('checked')">
-                  <span class="btn btn-default btn-xs"
-                      ng-click="$ctrl.toggleChecked(row)">
-                      <i class="fa"
-                            ng-class="{'fa-check-square-o' : row.checked,
-                                      'fa-square-o' : !row.checked}"></i>
-                  </span>
-                </td>
-                <!-- endss watch this function -->
+        <!-- starts status function -->
+        <td class="text-center">
+          <span class="label"
+              ng-class="{'label-warning':function.state=='warning',
+                          'label-danger':function.state=='danger',
+                          'label-success':function.state=='success'}">
+            <i class="dte-monitor--state fa"
+            ng-class="{'fa-warning':function.state=='warning',
+                        'fa-fire':function.state=='danger',
+                        'fa-check':function.state=='success'}"></i>
+          </span>
+        </td>
+        <!-- ends status function -->
 
-                <!-- starts name function -->
-                <td ng-if="$ctrl.showField('name')">
-                  <a href="#" ng-bind="row.name"></a>
-                </td>
-                <!-- starts name function -->
+        <!-- starts options function -->
+        <td class="text-center" ng-if="$ctrl.showField('options')">
+          <dte-monitor-options name="{{$ctrl.name}}"></dte-monitor-options>
+        </td>
+        <!-- starts options function -->
 
-                <!-- starts status function -->
-                <td class="text-center">
-                  <span class="label"
-                      ng-class="{'label-warning':row.state=='warning',
-                                  'label-danger':row.state=='danger',
-                                  'label-success':row.state=='success'}">
-                    <i class="dte-monitor--state fa"
-                    ng-class="{'fa-warning':row.state=='warning',
-                                'fa-fire':row.state=='danger',
-                                'fa-check':row.state=='success'}"></i>
-                  </span>
-                </td>
-                <!-- ends status function -->
+      </tr>
+    </tbody>
+    <!-- starts body table -->
 
-                <!-- starts options function -->
-                <td class="text-center" ng-if="$ctrl.showField('options')">
-                  <dte-monitor-options name="{{$ctrl.name}}"></dte-monitor-options>
-                </td>
-                <!-- starts options function -->
-
-              </tr>
-            </tbody>
-            <!-- starts body table -->
-
-          </table>
-        </div>
-      </uib-accordion>
-      <!--endss accord -->
-    </div>
-  </div>
+  </table>

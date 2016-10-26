@@ -3,16 +3,16 @@
     "name" : "Expense",
     "functions" : [
       {
-        "checked" : "true",
+        "isEnabled" : "true",
         "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
         "state" : "warning"
       },
       {
-        "checked" : "false",
+        "isEnabled" : "false",
         "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
         "state" : "warning"
       } ,{
-        "checked" : "true",
+        "isEnabled" : "true",
         "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
         "state" : "danger"
       }
@@ -22,16 +22,16 @@
     "name" : "Lift & Shift",
     "functions" : [
       {
-        "checked" : "true",
+        "isEnabled" : "true",
         "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
         "state" : "warning"
       },
       {
-        "checked" : "false",
+        "isEnabled" : "false",
         "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
         "state" : "warning"
       } ,{
-        "checked" : "true",
+        "isEnabled" : "true",
         "name" : "ASDA_ASDA_SDGSDG_DFGDFG",
         "state" : "danger"
       }
