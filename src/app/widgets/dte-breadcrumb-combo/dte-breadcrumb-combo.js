@@ -4,21 +4,21 @@
 
   angular
     .module('rfc')
-    .component('rfcBreadcrumbCombo', {
+    .component('dteBreadcrumbCombo', {
 
       bindings : {
         name : '@'
       },
 
       restrict : 'E',
-      templateUrl : 'app/widgets/rfc-breadcrumb-combo/rfc-breadcrumb-combo.html',
-      controller : rfcBreadcrumbCombo
+      templateUrl : 'app/widgets/dte-breadcrumb-combo/dte-breadcrumb-combo.html',
+      controller : dteBreadcrumbCombo
 
     } )
 
-    rfcBreadcrumbCombo.$inject = ['rfcResolve', '$state' ];
+    dteBreadcrumbCombo.$inject = ['dteResolve', '$state' ];
 
-    function rfcBreadcrumbCombo( rfcResolve, $state ) {
+    function dteBreadcrumbCombo( dteResolve, $state ) {
 
       var vm = this;
 
@@ -26,7 +26,7 @@
 
       return function(){
 
-        rfcResolve
+        dteResolve
           .get('server/list-' + vm.name + '.json' )
           .then(function(data){
             vm[vm.name] = data ;

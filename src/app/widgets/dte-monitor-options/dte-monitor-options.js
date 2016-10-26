@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('rfc')
-    .component('rfcMonitorOptions', {
+    .component('dteMonitorOptions', {
         bindings : {
           name : '@',
           item : '=',
@@ -10,11 +10,11 @@
           remove : '='
         },
         restrict : 'E',
-        templateUrl : 'app/widgets/rfc-monitor-options/rfc-monitor-options.html',
-        controller : rfcMonitorOptions
+        templateUrl : 'app/widgets/dte-monitor-options/dte-monitor-options.html',
+        controller : dteMonitorOptions
     } )
 
-  function rfcMonitorOptions () {
+  function dteMonitorOptions () {
 
     var vm = this ;
 

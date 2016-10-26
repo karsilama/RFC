@@ -4,11 +4,11 @@
 
   angular.module ('rfc')
 
-      .factory('rfcResolve', rfcResolve )
+      .factory('dteResolve', dteResolve )
 
-      rfcResolve.$inject = ['$http','$q'] ;
+      dteResolve.$inject = ['$http','$q'] ;
 
-      function rfcResolve($http,$q) {
+      function dteResolve($http,$q) {
 
         var factory = {
           get : get

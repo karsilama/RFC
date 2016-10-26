@@ -2,16 +2,16 @@
   'use strict';
   angular
     .module('rfc')
-    .component('rfcCheckListTable', {
+    .component('dteCheckListTable', {
         bindings : {
           data : '='
         },
         restrict : 'E',
-        templateUrl : 'app/widgets/rfc-check-list-table/rfc-check-list-table.html',
-        controller : rfcCheckListTable
+        templateUrl : 'app/widgets/dte-check-list-table/dte-check-list-table.html',
+        controller : dteCheckListTable
     } )
 
-  function rfcCheckListTable () {
+  function dteCheckListTable () {
 
     var vm = this ;
     vm.toggleWatch = toggleWatch ;

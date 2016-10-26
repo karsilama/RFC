@@ -3,17 +3,17 @@
 
   angular
     .module('rfc')
-    .component('rfcBreadcrumb', {
+    .component('dteBreadcrumb', {
 
       restrict : 'E',
-      templateUrl : 'app/widgets/rfc-breadcrumb/rfc-breadcrumb.html',
-      controller : rfcBreadcrumb
+      templateUrl : 'app/widgets/dte-breadcrumb/dte-breadcrumb.html',
+      controller : dteBreadcrumb
 
     } )
 
-    rfcBreadcrumb.$inject = ['rfcResolve', '$state' ];
+    dteBreadcrumb.$inject = ['dteResolve', '$state' ];
 
-    function rfcBreadcrumb( rfcResolve, $state ) {
+    function dteBreadcrumb( dteResolve, $state ) {
 
       var vm = this;
 

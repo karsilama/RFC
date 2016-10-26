@@ -7,7 +7,7 @@
 
     .module('rfc')
 
-    .component('rfcMainMonitor', {
+    .component('dteMainMonitor', {
 
         bindings : {
           name : '@',
@@ -15,13 +15,13 @@
         },
 
         restrict : 'E',
-        templateUrl : 'app/widgets/rfc-main-monitor/rfc-main-monitor.html',
-        controller : rfcMainMonitor
+        templateUrl : 'app/widgets/dte-main-monitor/dte-main-monitor.html',
+        controller : dteMainMonitor
     } )
 
-  rfcMainMonitor.$inject = ['rfcResolve', '$uibModal']  ;
+  dteMainMonitor.$inject = ['dteResolve', '$uibModal']  ;
 
-  function rfcMainMonitor (rfcResolve, $uibModal ) {
+  function dteMainMonitor (dteResolve, $uibModal ) {
 
     var vm = this ;
 
@@ -32,26 +32,26 @@
 
     function update ( item ) {
       console.log( ':: Updating ' + item.name )
-      // rfcResolve.upadate[vm.name]()
+      // dteResolve.upadate[vm.name]()
     }
 
     function remove ( item ) {
       console.log( ':: Removing ' + item.name )
-      // rfcResolve.delete[vm.name]()
+      // dteResolve.delete[vm.name]()
     }
 
     function save () {
       console.log( ':: Saving ' + vm.name ) ;
-      // rfcResolve.save[vm.name]()
+      // dteResolve.save[vm.name]()
     }
 
     function add() {
       $uibModal.open( {
         animation: true,
-        component: 'rfcModal',
+        component: 'dteModal',
         resolve: {
             data : function() {
-              return rfcResolve
+              return dteResolve
                         .get('server/list-enviroments.json')
                         .then(function(data){
                           return {
@@ -77,7 +77,7 @@
 
     return function(){
 
-          rfcResolve
+          dteResolve
               .get('server/' + vm.name + '.json' )
               .then(function(data){
                 vm.rows = data ;

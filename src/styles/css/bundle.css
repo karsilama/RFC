@@ -1,57 +1,59 @@
-.rfc-header h1 {
-  font-size: 1em; }
-
-.rfc-main-monitor {
+.dte-header h1 {
+  font-size: 1em;
+}
+.dte-main-monitor {
   max-width: 480px;
-  margin: 0 auto; }
-  .rfc-main-monitor .rfc-main-monitor--state {
-    min-width: 30px; }
+  margin: 0 auto;
+}
+.dte-main-monitor .dte-main-monitor--state {
+  min-width: 30px;
+}
+.dte-function-monitor__control-width {
+  max-width: 640px;
+}
 
-.rfc-function-monitor__control-width {
-  max-width: 640px; }
 
-
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px; }
-
+  font-size: 15px;
+}
 .white {
-  color: #fff; }
-
+  color: #fff;
+}
 .text-right {
-  text-align: right; }
-
+  text-align: right ;
+}
 .text-center {
-  text-align: center; }
-
+  text-align: center ;
+}
 .push-left {
-  margin-left: 1em; }
-
+  margin-left: 1em;
+}
 .push-top {
-  margin-top: 1em; }
-
+  margin-top: 1em;
+}
 .push-right {
-  margin-right: 1em; }
-
+  margin-right: 1em;
+}
 .push-bottom {
-  margin-bottom: 1em; }
-
+  margin-bottom: 1em;
+}
 .capital {
-  text-transform: capitalize; }
-
+  text-transform: capitalize;
+}
 .upercase {
-  text-transform: uppercase; }
-
+  text-transform: uppercase;
+}
 .lowercase {
-  text-transform: lowercase; }
-
+  text-transform: lowercase;
+}
 .pointer {
-  cursor: pointer; }
-
+  cursor: pointer;
+}
 .round {
   -webkit-border-radius: 50% !important;
   -moz-border-radius: 50% !important;
-  border-radius: 50% !important; }
+  border-radius: 50% !important;
+}
 
 /*# sourceMappingURL=bundle.css.map */

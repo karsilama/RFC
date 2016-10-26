@@ -1,19 +1,19 @@
 
 <br>
-<hr>
+<br>
 
 <!-- starts breadcrumb -->
-BREADCRUMB
-<rfc-breadcrumb></rfc-breadcrumb>
+BREADCRUMB | Widget :: dte-breadcrumb <hr>
+<dte-breadcrumb></dte-breadcrumb>
 <!-- ends breadcrumb -->
 
 <hr>
 
 <!-- start header -->
 <div class="container">
-  PROJECTS
+  PROJECTS | Widget :: dteMainMonitor <hr>
   <div class="jumbotron">
-    <rfc-main-monitor name="projects" enviroment="true"></rfc-main-monitor>
+    <dte-main-monitor name="projects" enviroment="true"></dte-main-monitor>
   </div>
 </div>
 <!-- start header -->
@@ -22,14 +22,14 @@ BREADCRUMB
 
 <!-- start main monitor ENVIROMENTS / APLICATIONS -->
 <div class="container">
-  ENVS / APPS
+  ENVS / APPS | Widget :: dteMainMonitor <hr>
   <div class="jumbotron">
       <div class="row">
         <div class="col-sm-6">
-          <rfc-main-monitor name="enviroments" enviroment="false"></rfc-main-monitor>
+          <dte-main-monitor name="enviroments" enviroment="false"></dte-main-monitor>
         </div>
         <div class="col-sm-6">
-          <rfc-main-monitor name="aplications" enviroment="true"></rfc-main-monitor>
+          <dte-main-monitor name="aplications" enviroment="true"></dte-main-monitor>
         </div>
       </div>
   </div>
@@ -40,13 +40,13 @@ BREADCRUMB
 
 <!-- starts SIGNATURES monitor -->
 <div class="container">
-  SIGNATURES
+  SIGNATURES | Widget :: dteFunctionsMonitor <hr>
     <div class="jumbotron">
-      <rfc-functions-monitor
+      <dte-functions-monitor
           name="signatures"
           collapsed="false"
-          classes="rfc-function-monitor__control-width"
-          fields="name,status"></rfc-signatures-monitor>
+          classes="dte-function-monitor__control-width"
+          fields="name,status"></dte-functions-monitor>
     </div>
 </div>
 <!-- ends SIGNATURES monitor -->
@@ -56,13 +56,13 @@ BREADCRUMB
 
 <!-- starts TESTS monitor -->
 <div class="container">
-  TESTS
+  TESTS | Widget :: functionsMonitor <hr>
     <div class="jumbotron">
-      <rfc-functions-monitor
+      <dte-functions-monitor
             name="tests"
             collapsed="true"
-            classes="rfc-function-monitor__control-width"
-            fields="name,status"></rfc-functions-monitor>
+            classes="dte-function-monitor__control-width"
+            fields="name,status"></dte-functions-monitor>
     </div>
 </div>
 <!-- ENDSs TESTS monitor -->
@@ -72,12 +72,12 @@ BREADCRUMB
 
 <!-- starts TESTS monitor -->
 <div class="container">
-  SIGNATURES
+  SIGNATURES | Widget :: functionsMonitor <hr>
   <div class="jumbotron">
-    <rfc-functions-monitor
+    <dte-functions-monitor
           name="signatures"
           collapsed="false"
-          fields="checked,name,status,options"></rfc-functions-monitor>
+          fields="checked,name,status,options"></dte-functions-monitor>
   </div>
 </div>
 <!-- ends TESTS monitor -->

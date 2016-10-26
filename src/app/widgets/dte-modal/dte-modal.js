@@ -6,20 +6,20 @@
 
     .module('rfc')
 
-    .component('rfcModal', {
+    .component('dteModal', {
 
       bindings : {
         modalInstance: "<",
         resolve: "<"
       },
 
-      templateUrl : 'app/widgets/rfc-modal/rfc-modal.html',
+      templateUrl : 'app/widgets/dte-modal/dte-modal.html',
 
       controller : function () {
         var vm= this;
 
         vm.data = vm.resolve.data;
-        
+
 
         vm.save = function() {
           vm.modalInstance.close(vm.data);

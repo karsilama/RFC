@@ -24,13 +24,13 @@
                             'glyphicon-chevron-right': !status.open}"></i>
             </h4>
           </uib-accordion-heading>
-          <table class="table table-striped rfc-function-monitor--table">
+          <table class="table table-striped dte-function-monitor--table">
 
             <!-- starts heading table -->
             <thead>
               <tr>
                   <th ng-repeat="th in $ctrl.rowsHeading">
-                    <strong classs="capital" ng-bind="th"></strong>
+                    <strong class="capital" ng-bind="th"></strong>
                   </th>
               </tr>
             </thead>
@@ -43,10 +43,10 @@
                 <!-- starts watch this function -->
                 <td class="text-center" ng-if="$ctrl.showField('checked')">
                   <span class="btn btn-default btn-xs"
-                      ng-click="$ctrl.toggleWatch()">
+                      ng-click="$ctrl.toggleChecked(row)">
                       <i class="fa"
-                            ng-class="{'fa-check-square-o' : row.checked==='true',
-                                      'fa-square-o' : row.checked==='false'}"></i>
+                            ng-class="{'fa-check-square-o' : row.checked,
+                                      'fa-square-o' : !row.checked}"></i>
                   </span>
                 </td>
                 <!-- endss watch this function -->
@@ -63,7 +63,7 @@
                       ng-class="{'label-warning':row.state=='warning',
                                   'label-danger':row.state=='danger',
                                   'label-success':row.state=='success'}">
-                    <i class="rfc-monitor--state fa"
+                    <i class="dte-monitor--state fa"
                     ng-class="{'fa-warning':row.state=='warning',
                                 'fa-fire':row.state=='danger',
                                 'fa-check':row.state=='success'}"></i>
@@ -73,7 +73,7 @@
 
                 <!-- starts options function -->
                 <td class="text-center" ng-if="$ctrl.showField('options')">
-                  <rfc-monitor-options name="{{$ctrl.name}}"></rfc-monitor-options>
+                  <dte-monitor-options name="{{$ctrl.name}}"></dte-monitor-options>
                 </td>
                 <!-- starts options function -->
 

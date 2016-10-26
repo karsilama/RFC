@@ -10,7 +10,7 @@
       },
 
       restrict : 'E',
-      templateUrl : 'app/widgets/rfc-header/rfc-header.html',
+      templateUrl : 'app/widgets/dte-header/dte-header.html',
       controller : rfcHeader
 
     } )

@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('rfc')
-    .component('rfcFunctionsMonitor', {
+    .component('dteFunctionsMonitor', {
         bindings : {
           name : '@',
           collapsed : '=',
@@ -10,24 +10,24 @@
           fields : '@'
         },
         restrict : 'E',
-        templateUrl : 'app/widgets/rfc-functions-monitor/rfc-functions-monitor.html',
-        controller : rfcFunctionsMonitor
+        templateUrl : 'app/widgets/dte-functions-monitor/dte-functions-monitor.html',
+        controller : dteFunctionsMonitor
     } )
 
-  rfcFunctionsMonitor.$inject = ['rfcResolve']  ;
+  dteFunctionsMonitor.$inject = ['dteResolve']  ;
 
-  function rfcFunctionsMonitor ( rfcResolve ) {
+  function dteFunctionsMonitor ( dteResolve ) {
 
     var vm = this ;
 
-    vm.toggleWatch = toggleWatch ;
+    vm.toggleChecked = toggleChecked ;
     vm.showField = showField ;
 
     vm.rowsHeading = vm.fields.split(',') ;
 
-    function toggleWatch(){
-        console.log('toggle watcher function') ;
-     }
+    function toggleChecked(item){
+      return item.checked = ! item.checked ;
+   }
 
     function showField(field) {
       return vm.rowsHeading.indexOf(field) >= 0
@@ -35,7 +35,7 @@
 
     return function () {
 
-      rfcResolve
+      dteResolve
         .get('server/' + vm.name + '.json' )
         .then(function(data){
           vm.myAccordions = data ;
