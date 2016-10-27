@@ -13,7 +13,7 @@
         restrict : 'E',
         templateUrl : 'app/widgets/dte-functions-monitor/dte-functions-monitor.html',
         controller : dteFunctionsMonitor
-    } )
+    } ) ;
 
   dteFunctionsMonitor.$inject = []  ;
 
@@ -26,20 +26,19 @@
 
     vm.rowsHeading = vm.fields.split(',') ;
 
-    function toggleEnabled(item){
-      return item.isEnabled = ! item.isEnabled ;
-   }
+    activate() ;
 
-    function showField(field) {
-      return vm.rowsHeading.indexOf(field) >= 0
+    function toggleEnabled(item){
+      item.isEnabled = ! item.isEnabled ;
     }
 
-    return function () {
+    function showField(field) {
+      return vm.rowsHeading.indexOf(field) >= 0 ;
+    }
 
-      console.log( vm.functions )
-
-    }()
+    function activate () {
+    }
 
   }
 
-})()
+})() ;

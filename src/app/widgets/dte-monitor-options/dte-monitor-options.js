@@ -12,7 +12,7 @@
         restrict : 'E',
         templateUrl : 'app/widgets/dte-monitor-options/dte-monitor-options.html',
         controller : dteMonitorOptions
-    } )
+    } ) ;
 
   function dteMonitorOptions () {
 
@@ -39,7 +39,7 @@
         update : true,
         remove : true
       }
-    }
+    } ;
 
   }
 

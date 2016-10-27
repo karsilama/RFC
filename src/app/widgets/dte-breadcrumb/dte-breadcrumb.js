@@ -5,25 +5,31 @@
     .module('rfc')
     .component('dteBreadcrumb', {
 
+      bindings : {
+        name : '@',
+        combos : '='
+      },
+
       restrict : 'E',
       templateUrl : 'app/widgets/dte-breadcrumb/dte-breadcrumb.html',
       controller : dteBreadcrumb
 
-    } )
+    } ) ;
 
-    dteBreadcrumb.$inject = ['dteResolve', '$state' ];
+    dteBreadcrumb.$inject = ['$state'];
 
-    function dteBreadcrumb( dteResolve, $state ) {
+    function dteBreadcrumb($state) {
 
       var vm = this;
 
-      vm.$state = $state
+      vm.$state = $state ;
 
-      vm.combos = ['projects', 'aplications', 'enviroments'] ;
+      activate() ;
 
-      return function(){
+      function activate(){
 
-      }()
+      }
+
     }
 
 })() ;

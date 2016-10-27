@@ -7,33 +7,31 @@
     .component('dteBreadcrumbCombo', {
 
       bindings : {
-        name : '@'
+        name : "@",
+        combo : '='
       },
 
       restrict : 'E',
       templateUrl : 'app/widgets/dte-breadcrumb-combo/dte-breadcrumb-combo.html',
       controller : dteBreadcrumbCombo
 
-    } )
+    } ) ;
 
-    dteBreadcrumbCombo.$inject = ['dteResolve', '$state' ];
+    dteBreadcrumbCombo.$inject = ['$state' ];
 
-    function dteBreadcrumbCombo( dteResolve, $state ) {
+    function dteBreadcrumbCombo( $state ) {
 
       var vm = this;
 
-      vm.$state = $state
+      vm.$state = $state ;
+      vm.selected = vm.combo[0] ;
 
-      return function(){
+      activate() ;
 
-        dteResolve
-          .get('server/list-' + vm.name + '.json' )
-          .then(function(data){
-            vm[vm.name] = data ;
-            vm.selected = vm[vm.name][0] ;
-          }) ;
+      function activate(){
 
-      }()
+      }
+
     }
 
 })() ;

@@ -1,23 +1,19 @@
-
 (function(){
 
   'use strict';
 
   angular
-
     .module('rfc')
-
     .component('dteMainMonitor', {
-
         bindings : {
           name : '@',
-          enviroment : '=enviroment'
+          enviroment : '=enviroment',
+          data : '='
         },
-
         restrict : 'E',
         templateUrl : 'app/widgets/dte-main-monitor/dte-main-monitor.html',
         controller : dteMainMonitor
-    } )
+    } ) ;
 
   dteMainMonitor.$inject = ['dteResolve', '$uibModal']  ;
 
@@ -30,13 +26,15 @@
     vm.update = update ;
     vm.remove = remove ;
 
+    activate() ;
+
     function update ( item ) {
-      console.log( ':: Updating ' + item.name )
+      console.log( ':: Updating ' + item.name ) ;
       // dteResolve.upadate[vm.name]()
     }
 
     function remove ( item ) {
-      console.log( ':: Removing ' + item.name )
+      console.log( ':: Removing ' + item.name ) ;
       // dteResolve.delete[vm.name]()
     }
 
@@ -50,7 +48,7 @@
         animation: true,
         component: 'dteModal',
         resolve: {
-            data : function() {
+            modalData : function() {
               return dteResolve
                         .get('server/list-enviroments.json')
                         .then(function(data){
@@ -60,8 +58,12 @@
                             name : vm.name,
                             nameForm : vm.name+'Form',
                             checkListTableRows : data
-                          }
+                          } ;
+                          console.log( data )
                         })
+                        .catch( function(error) {
+                          console.log(error)
+                        }) ;
             }
         },
         controller: function($scope) {
@@ -69,21 +71,15 @@
         }
       } )
       .result.then( function ( data ){
-        console.log( 'ok', data )
+        console.log( 'ok', data ) ;
       }, function ( message ) {
-        console.log('dismiss', message )
-      }  )
+        console.log('dismiss', message ) ;
+      }  ) ;
     }
 
-    return function(){
+    function activate() {
 
-          dteResolve
-              .get('server/' + vm.name + '.json' )
-              .then(function(data){
-                vm.rows = data ;
-              }) ;
-
-    }()
+    };
 
   }
 

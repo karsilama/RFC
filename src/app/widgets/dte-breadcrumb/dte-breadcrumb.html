@@ -1,10 +1,9 @@
 <div class="clearfix" ng-cloak>
   <ol class="breadcrumb">
     <li><a href="#">Home</a></li>
-
-    <li ng-repeat="item in $ctrl.combos">
-        <dte-breadcrumb-combo name="{{item}}"></dte-breadcrumb-combo>
+    <li ng-repeat="(name, combo) in $ctrl.combos">
+        <a href="#" class="capital push-right" ng-bind="name"></a>
+        <dte-breadcrumb-combo name="{{name}}" combo="combo"></dte-breadcrumb-combo>
     </li>
-
   </ol>
 </div>

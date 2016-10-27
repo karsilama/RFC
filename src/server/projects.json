@@ -1,8 +1,0 @@
-[
-  { "name" : "Lift & Shift - Expense",
-    "state" : "warning" },
-  { "name" : "CP3",
-    "state" : "danger" },
-  { "name" : "QAS",
-    "state" : "success" }
-]

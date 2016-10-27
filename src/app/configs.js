@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('rfc')
-    .config ( configFunction )
+    .config ( configFunction ) ;
 
     configFunction.$inject = ['$stateProvider', '$urlRouterProvider'];
     function configFunction($stateProvider, $urlRouterProvider) {
@@ -17,18 +17,19 @@
           controller : 'styleGuideController',
           controllerAs : 'vm',
           resolve : {
-            signatures : function ( dteResolve ) {
+            data : function( dteResolve ) {
               return dteResolve
-                        .get('server/signatures.json')
-                        .then( function( data ){
-                          return dteResolve.orderByKey ( data, 'name' ) ;
-                        } )
-                        .catch( function() {
-                          alert('Signatures not loaded') ;
-                        } )
+                .get('server/data.json' )
+                .then(function(data){
+                  return data ;
+                })
+                .catch( function(error) {
+                  console.log(error) ;
+                } ) ;
             }
+
           }
-        })
+        }) ;
 
       }
-})()
+})() ;

@@ -9,7 +9,7 @@
         restrict : 'E',
         templateUrl : 'app/widgets/dte-check-list-table/dte-check-list-table.html',
         controller : dteCheckListTable
-    } )
+    } ) ;
 
   function dteCheckListTable () {
 
@@ -18,17 +18,19 @@
     vm.toggleCheck = toggleCheck ;
 
     function toggleWatch(item){
-        return item.watch = ! item.watch ;
+        item.watch = ! item.watch ;
      }
 
     function toggleCheck(item){
-        return item.isEnabled = ! item.isEnabled ;
+        item.isEnabled = ! item.isEnabled ;
      }
 
-    return function () {
+     activate () ;
 
-    }()
+    function activate () {
+
+    }
 
   }
 
-})()
+})() ;

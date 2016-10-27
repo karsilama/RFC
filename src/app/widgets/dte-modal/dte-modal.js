@@ -10,26 +10,29 @@
 
       bindings : {
         modalInstance: "<",
-        resolve: "<"
+        modalData: "<"
       },
 
       templateUrl : 'app/widgets/dte-modal/dte-modal.html',
 
-      controller : function () {
-        var vm= this;
+      controller : dteModal
 
-        vm.data = vm.resolve.data;
+    } ) ;
 
+    function dteModal () {
 
-        vm.save = function() {
-          vm.modalInstance.close(vm.data);
-        };
+      var vm = this;
 
-        vm.close = function() {
-          vm.modalInstance.dismiss("close");
-        };
+      vm.data = vm.modalData;
 
-      }
-  } )
+      vm.save = function() {
+        vm.modalInstance.close(vm.data);
+      };
+
+      vm.close = function() {
+        vm.modalInstance.dismiss("close");
+      };
+
+    }
 
 } )() ;

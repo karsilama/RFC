@@ -4,7 +4,7 @@
 
 <!-- starts breadcrumb -->
 BREADCRUMB | Widget :: dte-breadcrumb <hr>
-<dte-breadcrumb></dte-breadcrumb>
+<dte-breadcrumb combos="vm.data"></dte-breadcrumb>
 <!-- ends breadcrumb -->
 
 <hr>
@@ -13,7 +13,7 @@ BREADCRUMB | Widget :: dte-breadcrumb <hr>
 <div class="container">
   PROJECTS | Widget :: dteMainMonitor <hr>
   <div class="jumbotron">
-    <dte-main-monitor name="projects" enviroment="true"></dte-main-monitor>
+    <dte-main-monitor data="vm.data.projects" name="projects" enviroment="true"></dte-main-monitor>
   </div>
 </div>
 <!-- start header -->
@@ -26,10 +26,10 @@ BREADCRUMB | Widget :: dte-breadcrumb <hr>
   <div class="jumbotron">
       <div class="row">
         <div class="col-sm-6">
-          <dte-main-monitor name="enviroments" enviroment="false"></dte-main-monitor>
+          <dte-main-monitor data="vm.data.enviroments" name="enviroments" enviroment="false"></dte-main-monitor>
         </div>
         <div class="col-sm-6">
-          <dte-main-monitor name="aplications" enviroment="true"></dte-main-monitor>
+          <dte-main-monitor data="vm.data.aplications" name="aplications" enviroment="true"></dte-main-monitor>
         </div>
       </div>
   </div>
@@ -43,7 +43,7 @@ BREADCRUMB | Widget :: dte-breadcrumb <hr>
   SIGNATURES | Widget :: dteFunctionsMonitor <hr>
     <div class="jumbotron">
 
-      <div ng-repeat="item in vm.signatures">
+      <div ng-repeat="item in vm.data.aplications">
         <uib-accordion>
           <div uib-accordion-group
               ng-init="status.open=!$ctrl.collapsed"
@@ -88,13 +88,19 @@ BREADCRUMB | Widget :: dte-breadcrumb <hr>
 <div class="container">
   SIGNATURES | Widget :: functionsMonitor <hr>
   <div class="jumbotron">
-    <div ng-repeat="item in vm.signatures">
-      <dte-functions-monitor
-      name="{{item.name}}"
-      functions="item.functions"
-      collapsed="false"
-      fields="isEnabled,name,state"></dte-functions-monitor>
-      <br>
+    <div ng-repeat="item in vm.data.aplications">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="capital" ng-bind="item.name"></h4>
+        </div>
+        <div class="panel-body">
+          <dte-functions-monitor
+          name="{{item.name}}"
+          functions="item.functions"
+          collapsed="false"
+          fields="isEnabled,name,state"></dte-functions-monitor>
+        </div>
+      </div>
     </div>
   </div>
 </div>

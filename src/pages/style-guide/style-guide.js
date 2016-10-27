@@ -6,13 +6,13 @@
 
       .controller('styleGuideController', styleGuideController )
 
-      styleGuideController.$inject = ['signatures'] ;
+      styleGuideController.$inject = ['data'] ;
 
-      function styleGuideController( signatures ) {
+      function styleGuideController( data ) {
 
         var vm = this;
 
-        vm.signatures = signatures ;
+        vm.data = data ;
 
         activate()
 

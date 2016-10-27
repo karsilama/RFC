@@ -1,8 +1,0 @@
-[
-  { "name" : "QA",
-    "state" : "warning" },
-  { "name" : "Testing",
-    "state" : "success" },
-  { "name" : "Production",
-    "state" : "danger" }
-]

@@ -4,16 +4,18 @@
 
   angular.module ('rfc')
 
-      .factory('dteResolve', dteResolve )
+      .factory('dteResolve', dteResolve ) ;
 
       dteResolve.$inject = ['$http','$q'] ;
 
       function dteResolve($http,$q) {
 
         var factory = {
-          get : get, 
+          get : get ,
           orderByKey : orderByKey
-        }
+        } ;
+
+        return factory;
 
         function orderByKey ( unOrdered , key) {
           var ordered = {} ;
@@ -31,15 +33,14 @@
           $http
             .get( url )
             .success(function( response ){
-              defered.resolve( response )
+              defered.resolve( response ) ;
             })
             .error(function( error ){
-              defered.reject( error )
-            })
+              defered.reject( error ) ;
+            }) ;
 
           return promise ;
         }
 
-        return factory;
       }
-})()
+})() ;
