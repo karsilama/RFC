@@ -6,16 +6,30 @@
 
       .factory('dteResolve', dteResolve ) ;
 
-      dteResolve.$inject = ['$http','$q'] ;
+      dteResolve.$inject = ['$http','$q', 'localStorageService'] ;
 
-      function dteResolve($http,$q) {
+      function dteResolve($http, $q, localStorageService) {
 
         var factory = {
           get : get ,
-          orderByKey : orderByKey
+          orderByKey : orderByKey,
+          setLocal : setLocal,
+          getLocal : getLocal
         } ;
 
         return factory;
+
+        function setLocal ( key, value ) {
+          if ( localStorageService.isSupported  ) {
+            localStorageService.set ( key, value )
+          }
+        }
+
+        function getLocal ( key ) {
+          if ( localStorageService.isSupported  ) {
+            return localStorageService.get ( key )
+          }
+        }
 
         function orderByKey ( unOrdered , key) {
           var ordered = {} ;

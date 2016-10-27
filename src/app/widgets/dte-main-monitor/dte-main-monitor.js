@@ -17,7 +17,7 @@
 
   dteMainMonitor.$inject = ['dteResolve', '$uibModal']  ;
 
-  function dteMainMonitor (dteResolve, $uibModal ) {
+  function dteMainMonitor ( dteResolve, $uibModal ) {
 
     var vm = this ;
 
@@ -49,32 +49,50 @@
         component: 'dteModal',
         resolve: {
             modalData : function() {
-              return dteResolve
-                        .get('server/list-enviroments.json')
-                        .then(function(data){
-                          return {
-                            method : 'insert',
-                            enviroment : vm.enviroment,
-                            name : vm.name,
-                            nameForm : vm.name+'Form',
-                            checkListTableRows : data
-                          } ;
-                          console.log( data )
-                        })
-                        .catch( function(error) {
-                          console.log(error)
-                        }) ;
+              var enviroments = dteResolve.getLocal("ENV") ;
+
+              // if no local resource
+              return ( ! enviroments )
+
+                // get from server
+                ? dteResolve
+                  .get('server/list-enviroments.json')
+                  .then(function(data){
+
+                    // save on local storage
+                    dteResolve.setLocal("ENV", data) ;
+
+                    // return for binding
+                    return getModalData ( data ) ;
+                  })
+                  .catch( function(error) {
+                    console.log(error)
+                  })
+
+                    // from local storage
+                : getModalData( enviroments )
             }
-        },
-        controller: function($scope) {
-          $scope.title = vm.name;
         }
       } )
       .result.then( function ( data ){
+
+        // ok
         console.log( 'ok', data ) ;
       }, function ( message ) {
+
+        // dimiss
         console.log('dismiss', message ) ;
       }  ) ;
+    }
+
+    function getModalData ( data ) {
+      return {
+        method : 'insert',
+        enviroment : vm.enviroment,
+        name : vm.name,
+        nameForm : vm.name+'Form',
+        checkListTableRows : data
+      }
     }
 
     function activate() {

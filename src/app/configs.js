@@ -2,12 +2,18 @@
   'use strict';
   angular
     .module('rfc')
+
+    .constant('LOCALSTORAGE_PREFIX', 'DTERFC')
+
     .config ( configFunction ) ;
 
-    configFunction.$inject = ['$stateProvider', '$urlRouterProvider'];
-    function configFunction($stateProvider, $urlRouterProvider) {
+    configFunction.$inject = ['$stateProvider', '$urlRouterProvider', 'localStorageServiceProvider', 'LOCALSTORAGE_PREFIX'];
+
+    function configFunction($stateProvider, $urlRouterProvider, localStorageServiceProvider, LOCALSTORAGE_PREFIX) {
 
       $urlRouterProvider.otherwise("/style-guide");
+
+      localStorageServiceProvider.setPrefix(LOCALSTORAGE_PREFIX);
 
       $stateProvider
 

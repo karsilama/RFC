@@ -10,7 +10,7 @@
 
       bindings : {
         modalInstance: "<",
-        modalData: "<"
+        resolve: "<"
       },
 
       templateUrl : 'app/widgets/dte-modal/dte-modal.html',
