@@ -21,13 +21,13 @@
 
         function setLocal ( key, value ) {
           if ( localStorageService.isSupported  ) {
-            localStorageService.set ( key, value )
+            localStorageService.set ( key, value ) ;
           }
         }
 
         function getLocal ( key ) {
           if ( localStorageService.isSupported  ) {
-            return localStorageService.get ( key )
+            return localStorageService.get ( key ) ;
           }
         }
 

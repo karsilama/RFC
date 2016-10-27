@@ -52,10 +52,9 @@
               var enviroments = dteResolve.getLocal("ENV") ;
 
               // if no local resource
-              return ( ! enviroments )
-
+              if ( ! enviroments ) {
                 // get from server
-                ? dteResolve
+                return dteResolve
                   .get('server/list-enviroments.json')
                   .then(function(data){
 
@@ -66,11 +65,13 @@
                     return getModalData ( data ) ;
                   })
                   .catch( function(error) {
-                    console.log(error)
-                  })
+                    console.log(error) ;
+                  }) ;
 
-                    // from local storage
-                : getModalData( enviroments )
+              // from local storage
+              } else {
+                return getModalData( enviroments ) ;
+              }
             }
         }
       } )
@@ -92,12 +93,12 @@
         name : vm.name,
         nameForm : vm.name+'Form',
         checkListTableRows : data
-      }
+      } ;
     }
 
     function activate() {
 
-    };
+    }
 
   }
 
