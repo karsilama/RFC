@@ -1,0 +1,8 @@
+{
+  "undef":true,
+  "globals":{
+    "angular":false,
+    "alert":false,
+    "console":false
+  }
+}

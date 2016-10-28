@@ -7,7 +7,7 @@
     .component('dteMainMonitor', {
         bindings : {
           name : '@',
-          enviroment : '=enviroment',
+          enviroment : '=',
           data : '='
         },
         restrict : 'E',
