@@ -16,12 +16,13 @@ gulp.task('jshint', function(){
 gulp.task('watch', function(){
 	gulp.watch('./src/styles/less/**/*.less', reload);
 	gulp.watch('./src/*.html').on('change', reload);
-	gulp.watch('./src/app/**/**/**/*').on('change', reload);
+	gulp.watch('./src/app/**/*').on('change', reload);
 	gulp.watch('./src/pages/**/*').on('change', reload);
 });
 
 gulp.task('less', function() {
-    return gulp.src('./src/styles/less/**/*.less')
+    return gulp.src(['./src/styles/less/**/*.less',
+											'./src/app/widgets/**/*.less' ])
 	    .pipe(sourcemaps.init())
 	    .pipe(less())
 	    .pipe(concat('bundle.css'))

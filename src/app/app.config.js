@@ -1,9 +1,10 @@
 (function(){
-  'use strict';
-  angular
-    .module('rfc')
 
-    .constant('LOCALSTORAGE_PREFIX', 'DTERFC')
+  'use strict';
+
+  angular
+
+    .module('app')
 
     .config ( configFunction ) ;
 
@@ -23,17 +24,9 @@
           controller : 'styleGuideController',
           controllerAs : 'vm',
           resolve : {
-            data : function( dteResolve ) {
-              return dteResolve
-                .get('server/data.json' )
-                .then(function(data){
-                  return data ;
-                })
-                .catch( function(error) {
-                  console.log(error) ;
-                } ) ;
+            data : function( styleGuideService ) {
+              return styleGuideService.getData()
             }
-
           }
         }) ;
 

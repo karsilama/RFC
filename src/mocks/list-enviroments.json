@@ -1,17 +1,14 @@
 [
   {
     "name" : "Staging",
-    "watch" : "true",
     "isEnabled" : "true"
   },
   {
     "name" : "Production",
-    "watch" : "true",
     "isEnabled" : "true"
   },
   {
     "name" : "Develoment",
-    "watch" : "true",
     "isEnabled" : "true"
   }
 ]

@@ -4,7 +4,7 @@
 
   angular
 
-    .module('rfc')
+    .module('app.widgets')
 
     .component('dteModal', {
 

@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   angular
-    .module('rfc')
+    .module('app.widgets')
     .component('dteMonitorOptions', {
         bindings : {
           name : '@',

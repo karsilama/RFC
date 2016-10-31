@@ -2,41 +2,32 @@
 
   'use strict';
 
-  angular.module ('rfc')
+  angular.module ('app.services')
 
-      .factory('dteResolve', dteResolve ) ;
+      .factory('resolveService', resolveService ) ;
 
-      dteResolve.$inject = ['$http','$q', 'localStorageService'] ;
+      resolveService.$inject = ['$http','$q', 'localStorageService'] ;
 
-      function dteResolve($http, $q, localStorageService) {
+      function resolveService($http, $q, localStorageService) {
 
         var factory = {
           get : get ,
-          orderByKey : orderByKey,
-          setLocal : setLocal,
-          getLocal : getLocal
+          setLocalstorage : setLocalstorage,
+          getLocalstorage : getLocalstorage
         } ;
 
         return factory;
 
-        function setLocal ( key, value ) {
+        function setLocalstorage ( key, value ) {
           if ( localStorageService.isSupported  ) {
             localStorageService.set ( key, value ) ;
           }
         }
 
-        function getLocal ( key ) {
+        function getLocalstorage ( key ) {
           if ( localStorageService.isSupported  ) {
             return localStorageService.get ( key ) ;
           }
-        }
-
-        function orderByKey ( unOrdered , key) {
-          var ordered = {} ;
-          for ( var i in unOrdered ) {
-            ordered[unOrdered[i][key]] = unOrdered[i] ;
-          }
-          return ordered ;
         }
 
         function get(url) {

@@ -2,7 +2,7 @@
 
   'use strict';
 
-  angular.module ('rfc')
+  angular.module ('app.pages')
 
       .controller('styleGuideController', styleGuideController )
 

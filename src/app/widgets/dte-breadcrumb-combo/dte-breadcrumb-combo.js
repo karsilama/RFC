@@ -3,7 +3,7 @@
   'use stric';
 
   angular
-    .module('rfc')
+    .module('app.widgets')
     .component('dteBreadcrumbCombo', {
 
       bindings : {

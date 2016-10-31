@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('rfc')
+    .module('app.widgets')
     .component('dteMainMonitor', {
         bindings : {
           name : '@',
@@ -15,9 +15,9 @@
         controller : dteMainMonitor
     } ) ;
 
-  dteMainMonitor.$inject = ['dteResolve', '$uibModal']  ;
+  dteMainMonitor.$inject = ['mainMonitorService', '$uibModal']  ;
 
-  function dteMainMonitor ( dteResolve, $uibModal ) {
+  function dteMainMonitor ( mainMonitorService, $uibModal ) {
 
     var vm = this ;
 
@@ -30,17 +30,17 @@
 
     function update ( item ) {
       console.log( ':: Updating ' + item.name ) ;
-      // dteResolve.upadate[vm.name]()
+      // mainMonitorService.upadate[vm.name]()
     }
 
     function remove ( item ) {
       console.log( ':: Removing ' + item.name ) ;
-      // dteResolve.delete[vm.name]()
+      // mainMonitorService.delete[vm.name]()
     }
 
     function save () {
       console.log( ':: Saving ' + vm.name ) ;
-      // dteResolve.save[vm.name]()
+      // mainMonitorService.save[vm.name]()
     }
 
     function add() {
@@ -49,27 +49,29 @@
         component: 'dteModal',
         resolve: {
             modalData : function() {
-              var enviroments = dteResolve.getLocal("ENV") ;
 
-              // if no local resource
-              if ( ! enviroments ) {
-                // get from server
-                return dteResolve
-                  .get('server/list-enviroments.json')
-                  .then(function(data){
+              //checking if saved enviroments
+              var enviroments = mainMonitorService.get("enviroments") ;
+              if( ! enviroments ) {
 
-                    // save on local storage
-                    dteResolve.setLocal("ENV", data) ;
+                // getting from server
+                return mainMonitorService
+                  .getEnviroments()
+                  .then( function( data ) {
 
-                    // return for binding
-                    return getModalData ( data ) ;
-                  })
-                  .catch( function(error) {
-                    console.log(error) ;
-                  }) ;
+                    // saving on service
+                    mainMonitorService.set("enviroments", data ) ;
 
-              // from local storage
-              } else {
+                    // adding extra data
+                    return getModalData( data ) ;
+                  } )
+                  .catch( function( error ) {
+                    console.log ( error )
+                  } ) ;
+              }
+
+              // adding extra data
+              else {
                 return getModalData( enviroments ) ;
               }
             }
@@ -97,7 +99,6 @@
     }
 
     function activate() {
-
     }
 
   }

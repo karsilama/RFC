@@ -2,7 +2,7 @@
   'use stric';
 
   angular
-    .module('rfc')
+    .module('app.widgets')
     .component('dteHeader', {
 
       bindings : {
