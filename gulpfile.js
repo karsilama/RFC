@@ -34,7 +34,7 @@ gulp.task('less', function() {
 	  .pipe(less())
 	  .pipe(concat('bundle.css'))
 	  .pipe(sourcemaps.write('.'))
-	  .pipe(gulp.dest('./src/styles/css'));
+	  .pipe(gulp.dest('./src/assets/css'));
 });
 
 gulp.task('serve', ['less'], function(){
