@@ -25,7 +25,7 @@
           controllerAs : 'vm',
           resolve : {
             data : function( styleGuideService ) {
-              return styleGuideService.getData()
+              return styleGuideService.getData() ;
             }
           }
         }) ;

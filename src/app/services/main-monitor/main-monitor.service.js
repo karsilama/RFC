@@ -29,12 +29,12 @@
         }
 
         function getEnviroments() {
-          var url  = MOCK_DATA
-            ? 'mocks/list-enviroments.json'
-            : API_ENDPOINT + 'enviroments' ;
-          return  ( _private["enviroments"] && _private["enviroments"].length > 0 )
-            ? enviroments
-            : resolveService.get(url)
+          var url  = MOCK_DATA ? 'mocks/list-enviroments.json' : API_ENDPOINT + 'enviroments' ;
+          if ( _private.enviroments && _private.enviroments.length > 0 ) {
+            return _private.enviroments ;
+          } else {
+            return resolveService.get(url) ;
+          }
         }
 
       }

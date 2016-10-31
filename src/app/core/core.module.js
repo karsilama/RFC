@@ -5,5 +5,5 @@
       'ui.router',
       'ui.bootstrap',
       'LocalStorageModule'
-    ])
-})()
+    ]) ;
+})() ;

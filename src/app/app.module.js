@@ -6,5 +6,5 @@
       'app.pages',
       'app.widgets',
       'app.services'
-    ])
-})()
+    ]);
+})();

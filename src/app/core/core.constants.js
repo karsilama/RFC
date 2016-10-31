@@ -2,5 +2,5 @@
   'use strict';
   angular
     .module('app.core')
-    .constant('LOCALSTORAGE_PREFIX', 'DTE')
-})()
+    .constant('LOCALSTORAGE_PREFIX', 'DTE') ;
+})() ;
