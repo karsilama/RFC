@@ -4,7 +4,7 @@
 
   angular
 
-    .module('app')
+    .module('app.core')
 
     .config ( configFunction ) ;
 

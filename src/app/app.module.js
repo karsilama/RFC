@@ -2,10 +2,7 @@
   'use strict';
   angular
     .module('app', [
-      'ui.router',
-      'ui.bootstrap',
-      'LocalStorageModule',
-
+      'app.core',
       'app.pages',
       'app.widgets',
       'app.services'
