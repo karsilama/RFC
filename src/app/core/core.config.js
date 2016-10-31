@@ -18,6 +18,11 @@
 
       $stateProvider
 
+      .state('app', {
+        url : '/',
+        abstract:  true ,
+      })
+
         .state('style-guide', {
           url : '/style-guide',
           templateUrl : '/pages/style-guide/style-guide.html',

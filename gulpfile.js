@@ -4,9 +4,16 @@ var gulp = require('gulp'),
 		less = require('gulp-less'),
 		sourcemaps = require('gulp-sourcemaps'),
 		concat = require('gulp-concat'),
-		browserSync = require('browser-sync');
+		browserSync = require('browser-sync'),
+		beautify = require('gulp-beautify');
 
 gulp.task ('reload', ['less'], browserSync.reload ) ;
+
+gulp.task('beautify', function(){
+	gulp.src('./src/app/**/*.js')
+		.pipe(beautify({indentSize:2}))
+		.pipe(gulp.dest('./'));
+} );
 
 gulp.task('jshint', function(){
 	return gulp.src('./src/app/**/*.js')
