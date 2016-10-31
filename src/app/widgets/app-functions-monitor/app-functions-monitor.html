@@ -1,4 +1,4 @@
-  <table class="table table-striped dte-function-monitor--table">
+  <table class="table table-striped app-function-monitor--table">
 
     <!-- starts heading table -->
     <thead>
@@ -37,7 +37,7 @@
               ng-class="{'label-warning':function.state=='warning',
                           'label-danger':function.state=='danger',
                           'label-success':function.state=='success'}">
-            <i class="dte-monitor--state fa"
+            <i class="app-monitor--state fa"
             ng-class="{'fa-warning':function.state=='warning',
                         'fa-fire':function.state=='danger',
                         'fa-check':function.state=='success'}"></i>
@@ -47,7 +47,7 @@
 
         <!-- starts options function -->
         <td class="text-center" ng-if="$ctrl.showField('options')">
-          <dte-monitor-options name="{{$ctrl.name}}"></dte-monitor-options>
+          <app-monitor-options name="{{$ctrl.name}}"></app-monitor-options>
         </td>
         <!-- starts options function -->
 

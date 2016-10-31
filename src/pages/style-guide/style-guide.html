@@ -3,8 +3,8 @@
 <br>
 
 <!-- starts breadcrumb -->
-BREADCRUMB | Widget :: dte-breadcrumb <hr>
-<dte-breadcrumb combos="vm.data"></dte-breadcrumb>
+BREADCRUMB | Widget :: app-breadcrumb <hr>
+<app-breadcrumb combos="vm.data"></app-breadcrumb>
 <!-- ends breadcrumb -->
 
 <hr>
@@ -13,7 +13,7 @@ BREADCRUMB | Widget :: dte-breadcrumb <hr>
 <div class="container">
   PROJECTS | Widget :: dteMainMonitor <hr>
   <div class="jumbotron">
-    <dte-main-monitor data="vm.data.projects" name="projects" enviroment="true"></dte-main-monitor>
+    <app-main-monitor data="vm.data.projects" name="projects" enviroment="true"></app-main-monitor>
   </div>
 </div>
 <!-- start header -->
@@ -26,10 +26,10 @@ BREADCRUMB | Widget :: dte-breadcrumb <hr>
   <div class="jumbotron">
       <div class="row">
         <div class="col-sm-6">
-          <dte-main-monitor data="vm.data.enviroments" name="enviroments" enviroment="false"></dte-main-monitor>
+          <app-main-monitor data="vm.data.enviroments" name="enviroments" enviroment="false"></app-main-monitor>
         </div>
         <div class="col-sm-6">
-          <dte-main-monitor data="vm.data.aplications" name="aplications" enviroment="true"></dte-main-monitor>
+          <app-main-monitor data="vm.data.aplications" name="aplications" enviroment="true"></app-main-monitor>
         </div>
       </div>
   </div>
@@ -58,13 +58,13 @@ BREADCRUMB | Widget :: dte-breadcrumb <hr>
                   'glyphicon-chevron-right': !status.open}"></i>
                 </h4>
               </uib-accordion-heading>
-              <dte-functions-monitor
+              <app-functions-monitor
               name="{{item.name}}"
               functions="item.functions"
               collapsed="false"
-              classes="dte-function-monitor__control-width"
+              classes="app-function-monitor__control-width"
               fields="name,state">
-            </dte-functions-monitor>
+            </app-functions-monitor>
           </div>
         </uib-accordion>
       </div>
@@ -94,11 +94,11 @@ BREADCRUMB | Widget :: dte-breadcrumb <hr>
           <h4 class="capital" ng-bind="item.name"></h4>
         </div>
         <div class="panel-body">
-          <dte-functions-monitor
+          <app-functions-monitor
           name="{{item.name}}"
           functions="item.functions"
           collapsed="false"
-          fields="isEnabled,name,state"></dte-functions-monitor>
+          fields="isEnabled,name,state"></app-functions-monitor>
         </div>
       </div>
     </div>

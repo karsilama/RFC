@@ -3,7 +3,7 @@
 
   angular
     .module('app.widgets')
-    .component('dteBreadcrumb', {
+    .component('appBreadcrumb', {
 
       bindings : {
         name : '@',
@@ -11,14 +11,14 @@
       },
 
       restrict : 'E',
-      templateUrl : 'app/widgets/dte-breadcrumb/dte-breadcrumb.html',
-      controller : dteBreadcrumb
+      templateUrl : 'app/widgets/app-breadcrumb/app-breadcrumb.html',
+      controller : appBreadcrumb
 
     } ) ;
 
-    dteBreadcrumb.$inject = ['$state'];
+    appBreadcrumb.$inject = ['$state'];
 
-    function dteBreadcrumb($state) {
+    function appBreadcrumb($state) {
 
       var vm = this;
 

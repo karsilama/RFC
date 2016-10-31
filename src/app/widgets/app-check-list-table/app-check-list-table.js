@@ -2,16 +2,16 @@
   'use strict';
   angular
     .module('app.widgets')
-    .component('dteCheckListTable', {
+    .component('appCheckListTable', {
         bindings : {
           data : '='
         },
         restrict : 'E',
-        templateUrl : 'app/widgets/dte-check-list-table/dte-check-list-table.html',
-        controller : dteCheckListTable
+        templateUrl : 'app/widgets/app-check-list-table/app-check-list-table.html',
+        controller : appCheckListTable
     } ) ;
 
-  function dteCheckListTable () {
+  function appCheckListTable () {
 
     var vm = this ;
     vm.toggleWatch = toggleWatch ;

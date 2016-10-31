@@ -4,7 +4,7 @@
 
   angular
     .module('app.widgets')
-    .component('dteBreadcrumbCombo', {
+    .component('appBreadcrumbCombo', {
 
       bindings : {
         name : "@",
@@ -12,14 +12,14 @@
       },
 
       restrict : 'E',
-      templateUrl : 'app/widgets/dte-breadcrumb-combo/dte-breadcrumb-combo.html',
-      controller : dteBreadcrumbCombo
+      templateUrl : 'app/widgets/app-breadcrumb-combo/app-breadcrumb-combo.html',
+      controller : appBreadcrumbCombo
 
     } ) ;
 
-    dteBreadcrumbCombo.$inject = ['$state' ];
+    appBreadcrumbCombo.$inject = ['$state' ];
 
-    function dteBreadcrumbCombo( $state ) {
+    function appBreadcrumbCombo( $state ) {
 
       var vm = this;
 

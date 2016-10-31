@@ -43,19 +43,19 @@ body {
   border-radius: 50% !important;
 }
 
-.dte-function-monitor__control-width {
+.app-function-monitor__control-width {
   max-width: 640px;
 }
 
-.dte-header h1 {
+.app-header h1 {
   font-size: 1em;
 }
 
-.dte-main-monitor {
+.app-main-monitor {
   max-width: 480px;
   margin: 0 auto;
 }
-.dte-main-monitor .dte-main-monitor--state {
+.app-main-monitor .app-main-monitor--state {
   min-width: 30px;
 }
 

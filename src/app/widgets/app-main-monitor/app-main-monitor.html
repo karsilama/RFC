@@ -1,4 +1,4 @@
-<div class="panel panel-default dte-main-monitor">
+<div class="panel panel-default app-main-monitor">
 
   <!-- starts heading -->
   <div class="panel-heading">
@@ -13,7 +13,7 @@
   <!-- ends heading -->
 
   <div class="panel-body">
-    <table class="table table-striped dte-main-monitor">
+    <table class="table table-striped app-main-monitor">
 
       <!-- starts heading table -->
       <thead>
@@ -37,7 +37,7 @@
                             'label-danger'  : row.state=='danger',
                             'label-success' : row.state=='success'}">
 
-              <i class="dte-monitor--state fa"
+              <i class="app-monitor--state fa"
               ng-class="{ 'fa-warning'  :row.state=='warning',
                           'fa-fire'     :row.state=='danger',
                           'fa-check'    :row.state=='success'}"></i>
@@ -46,11 +46,11 @@
 
           <!-- starts table options -->
           <td class="text-center">
-            <dte-monitor-options
+            <app-monitor-options
               name="{{$ctrl.name}}"
               update="$ctrl.update"
               remove="$ctrl.remove"
-              item="row" ></dte-monitor-options>
+              item="row" ></app-monitor-options>
           </td>
           <!-- ends table options -->
         </tr>

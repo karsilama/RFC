@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('app.widgets')
-    .component('dteFunctionsMonitor', {
+    .component('appFunctionsMonitor', {
         bindings : {
           name : '@',
           functions : '=',
@@ -11,13 +11,13 @@
           fields : '@'
         },
         restrict : 'E',
-        templateUrl : 'app/widgets/dte-functions-monitor/dte-functions-monitor.html',
-        controller : dteFunctionsMonitor
+        templateUrl : 'app/widgets/app-functions-monitor/app-functions-monitor.html',
+        controller : appFunctionsMonitor
     } ) ;
 
-  dteFunctionsMonitor.$inject = []  ;
+  appFunctionsMonitor.$inject = []  ;
 
-  function dteFunctionsMonitor ( ) {
+  function appFunctionsMonitor ( ) {
 
     var vm = this ;
 

@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('app.widgets')
-    .component('dteMonitorOptions', {
+    .component('appMonitorOptions', {
         bindings : {
           name : '@',
           item : '=',
@@ -10,11 +10,11 @@
           remove : '='
         },
         restrict : 'E',
-        templateUrl : 'app/widgets/dte-monitor-options/dte-monitor-options.html',
-        controller : dteMonitorOptions
+        templateUrl : 'app/widgets/app-monitor-options/app-monitor-options.html',
+        controller : appMonitorOptions
     } ) ;
 
-  function dteMonitorOptions () {
+  function appMonitorOptions () {
 
     var vm = this ;
 

@@ -4,20 +4,20 @@
 
   angular
     .module('app.widgets')
-    .component('dteMainMonitor', {
+    .component('appMainMonitor', {
         bindings : {
           name : '@',
           enviroment : '=',
           data : '='
         },
         restrict : 'E',
-        templateUrl : 'app/widgets/dte-main-monitor/dte-main-monitor.html',
-        controller : dteMainMonitor
+        templateUrl : 'app/widgets/app-main-monitor/app-main-monitor.html',
+        controller : appMainMonitor
     } ) ;
 
-  dteMainMonitor.$inject = ['mainMonitorService', '$uibModal']  ;
+  appMainMonitor.$inject = ['mainMonitorService', '$uibModal']  ;
 
-  function dteMainMonitor ( mainMonitorService, $uibModal ) {
+  function appMainMonitor ( mainMonitorService, $uibModal ) {
 
     var vm = this ;
 
@@ -46,7 +46,7 @@
     function add() {
       $uibModal.open( {
         animation: true,
-        component: 'dteModal',
+        component: 'appModal',
         resolve: {
             modalData : function() {
 

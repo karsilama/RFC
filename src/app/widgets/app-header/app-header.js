@@ -3,13 +3,13 @@
 
   angular
     .module('app.widgets')
-    .component('dteHeader', {
+    .component('appHeader', {
 
       bindings : {
       },
 
       restrict : 'E',
-      templateUrl : 'app/widgets/dte-header/dte-header.html',
+      templateUrl : 'app/widgets/app-header/app-header.html',
       controller : rfcHeader
 
     } ) ;

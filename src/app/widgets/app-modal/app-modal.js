@@ -6,20 +6,20 @@
 
     .module('app.widgets')
 
-    .component('dteModal', {
+    .component('appModal', {
 
       bindings : {
         modalInstance: "<",
         resolve: "<"
       },
 
-      templateUrl : 'app/widgets/dte-modal/dte-modal.html',
+      templateUrl : 'app/widgets/app-modal/app-modal.html',
 
-      controller : dteModal
+      controller : appModal
 
     } ) ;
 
-    function dteModal () {
+    function appModal () {
 
       var vm = this;
 
