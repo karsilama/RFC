@@ -18,7 +18,6 @@ gulp.task('watch', function(){
 	gulp.watch('./src/*.html', ['reload'] );
 	gulp.watch('./src/app/**/*.js', ['reload']);
 	gulp.watch('./src/app/**/*.html', ['reload']);
-	gulp.watch('./src/pages/**/*.html', ['reload']);
 	gulp.watch([
 		'./src/styles/less/**/*',
 		'./src/app/widgets/**/*.less'

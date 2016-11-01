@@ -20,7 +20,7 @@
 
         .state('style-guide', {
           url : '/style-guide',
-          templateUrl : '/pages/style-guide/style-guide.html',
+          templateUrl : '/app/pages/style-guide/style-guide.html',
           controller : 'styleGuideController',
           controllerAs : 'vm',
           resolve : {
