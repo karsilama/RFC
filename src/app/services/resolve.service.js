@@ -4,19 +4,19 @@
 
   angular.module ('app.services')
 
-      .factory('resolveFactory', resolveFactory ) ;
+      .service('resolveService', resolveService ) ;
 
-      resolveFactory.$inject = ['$http','$q', 'localStorageService'] ;
+      resolveService.$inject = ['$http','$q', 'localStorageService'] ;
 
-      function resolveFactory($http, $q, localStorageService) {
+      function resolveService($http, $q, localStorageService) {
 
-        var factory = {
+        var service = {
           get : get ,
           setLocalstorage : setLocalstorage,
           getLocalstorage : getLocalstorage
         } ;
 
-        return factory;
+        return service;
 
         function setLocalstorage ( key, value ) {
           if ( localStorageService.isSupported  ) {

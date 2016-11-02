@@ -6,9 +6,9 @@
 
       .service('styleGuideService', styleGuideService ) ;
 
-      styleGuideService.$inject = ['resolveFactory', 'MOCK_DATA', 'API_ENDPOINT'] ;
+      styleGuideService.$inject = ['resolveService', 'MOCK_DATA', 'API_ENDPOINT'] ;
 
-      function styleGuideService(resolveFactory, MOCK_DATA, API_ENDPOINT) {
+      function styleGuideService(resolveService, MOCK_DATA, API_ENDPOINT) {
 
         var service = {
           getData : getData ,
@@ -27,7 +27,7 @@
 
         function getData() {
           var url = MOCK_DATA ? 'mocks/data.json' : API_ENDPOINT = 'data';
-          return resolveFactory
+          return resolveService
             .get(url)
             .then(function(data){
               return data ;
