@@ -4,7 +4,7 @@
 
   angular
 
-    .module('app.core')
+    .module('app.core.routing')
 
     .config ( configFunction ) ;
 

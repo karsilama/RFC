@@ -47,16 +47,16 @@ body {
   max-width: 640px;
 }
 
+.app-header h1 {
+  font-size: 1em;
+}
+
 .app-main-monitor {
   max-width: 480px;
   margin: 0 auto;
 }
 .app-main-monitor .app-main-monitor--state {
   min-width: 30px;
-}
-
-.app-header h1 {
-  font-size: 1em;
 }
 
 /*# sourceMappingURL=bundle.css.map */

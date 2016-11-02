@@ -4,11 +4,11 @@
 
   angular.module ('app.services')
 
-      .factory('resolveService', resolveService ) ;
+      .factory('resolveFactory', resolveFactory ) ;
 
-      resolveService.$inject = ['$http','$q', 'localStorageService'] ;
+      resolveFactory.$inject = ['$http','$q', 'localStorageService'] ;
 
-      function resolveService($http, $q, localStorageService) {
+      function resolveFactory($http, $q, localStorageService) {
 
         var factory = {
           get : get ,

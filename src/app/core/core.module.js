@@ -2,8 +2,11 @@
   'use strict';
   angular
     .module('app.core', [
-      'ui.router',
+
       'ui.bootstrap',
-      'LocalStorageModule'
+      'LocalStorageModule',
+
+      // aplication routing
+      'app.core.routing'
     ]) ;
 })() ;

@@ -6,9 +6,9 @@
 
       .service('mainMonitorService', mainMonitorService ) ;
 
-      mainMonitorService.$inject = ['resolveService', 'MOCK_DATA', 'API_ENDPOINT'] ;
+      mainMonitorService.$inject = ['resolveFactory', 'MOCK_DATA', 'API_ENDPOINT'] ;
 
-      function mainMonitorService(resolveService, MOCK_DATA, API_ENDPOINT) {
+      function mainMonitorService(resolveFactory, MOCK_DATA, API_ENDPOINT) {
 
         var _private = {} ;
 
@@ -33,7 +33,7 @@
           if ( _private.enviroments && _private.enviroments.length > 0 ) {
             return _private.enviroments ;
           } else {
-            return resolveService.get(url) ;
+            return resolveFactory.get(url) ;
           }
         }
 

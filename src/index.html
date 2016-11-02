@@ -6,12 +6,15 @@
 
     <link rel="icon" href="assets/images/favicon.ico">
 
-    <!-- starts styles -->
+    <!-- starts bower components -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" media="screen">
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" media="screen">
-    <link rel="stylesheet" href="assets/css/bundle.css" media="screen">
-    <!-- ends styles -->
+    <!-- ends bower components -->
+
+    <!-- starts aplication styles -->
+    <link rel="stylesheet" href="assets/styles/bundle.css" media="screen">
+    <!-- ends aplication styles -->
 
     <!-- starts scripts -->
     <script src="../bower_components/angular/angular.js"></script>
@@ -22,24 +25,26 @@
     <script src="../bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <!-- ends scripts -->
 
-    <!-- starts app -->
-
-    <!-- modules -->
+    <!-- starts modules -->
     <script src="app/app.module.js"></script>
     <script src="app/core/core.module.js"></script>
+    <script src="app/core/routing/routing.module.js"></script>
     <script src="app/pages/pages.module.js"></script>
     <script src="app/widgets/widgets.module.js"></script>
     <script src="app/services/services.module.js"></script>
+    <!-- ends modules -->
 
-    <!-- controllers -->
+    <!-- starts controllers -->
     <script src="app/pages/style-guide/style-guide.js"></script>
+    <!-- ends controllers -->
 
-    <!-- services -->
-    <script src="app/services/resolve.service.js"></script>
+    <!-- starts services -->
+    <script src="app/services/resolve.factory.js"></script>
     <script src="app/services/style-guide/style-guide.service.js"></script>
     <script src="app/services/main-monitor/main-monitor.service.js"></script>
+    <!-- ends services -->
 
-    <!-- components -->
+    <!-- starts components -->
     <script src="app/widgets/app-modal/app-modal.js"></script>
     <script src="app/widgets/app-breadcrumb/app-breadcrumb.js"></script>
     <script src="app/widgets/app-breadcrumb-combo/app-breadcrumb-combo.js"></script>
@@ -48,12 +53,16 @@
     <script src="app/widgets/app-functions-monitor/app-functions-monitor.js"></script>
     <script src="app/widgets/app-monitor-options/app-monitor-options.js"></script>
     <script src="app/widgets/app-check-list-table/app-check-list-table.js"></script>
+    <!-- ends components -->
 
-    <script src="app/core/core.constants.js"></script>
+    <!-- starts constants -->
     <script src="app/app.constants.js"></script>
+    <script src="app/core/routing/routing.constants.js"></script>
+    <!-- ends constants -->
 
-    <script src="app/core/core.config.js"></script>
-    <!-- ends scripts -->
+    <!-- starts aplication routing -->
+    <script src="app/core/routing/routing.config.js"></script>
+    <!-- end -->
 
   </head>
   <body>

@@ -19,21 +19,21 @@ gulp.task('watch', function(){
 	gulp.watch('./src/app/**/*.js', ['reload']);
 	gulp.watch('./src/app/**/*.html', ['reload']);
 	gulp.watch([
-		'./src/styles/less/**/*',
+		'./src/assets/styles/less/**/*',
 		'./src/app/widgets/**/*.less'
 	], ['reload'] );
 });
 
 gulp.task('less', function() {
 		return gulp.src([
-			'./src/styles/less/**/*.less',
+			'./src/assets/styles/less/**/*.less',
 			'./src/app/widgets/**/*.less'
 		])
 	  .pipe(sourcemaps.init())
 	  .pipe(less())
 	  .pipe(concat('bundle.css'))
 	  .pipe(sourcemaps.write('.'))
-	  .pipe(gulp.dest('./src/assets/css'));
+	  .pipe(gulp.dest('./src/assets/styles'));
 });
 
 gulp.task('serve', ['less'], function(){
