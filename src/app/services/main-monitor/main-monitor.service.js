@@ -33,7 +33,7 @@
           if ( _private.enviroments && _private.enviroments.length > 0 ) {
             return _private.enviroments ;
           } else {
-            return resolveService.get(url) ;
+            return ( new resolveService()  ).get(url) ;
           }
         }
 

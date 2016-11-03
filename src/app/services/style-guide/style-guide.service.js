@@ -27,7 +27,7 @@
 
         function getData() {
           var url = MOCK_DATA ? 'mocks/data.json' : API_ENDPOINT = 'data';
-          return resolveService
+          return ( new resolveService()  )
             .get(url)
             .then(function(data){
               return data ;

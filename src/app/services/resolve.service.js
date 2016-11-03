@@ -6,17 +6,23 @@
 
       .service('resolveService', resolveService ) ;
 
-      resolveService.$inject = ['$http','$q', 'localStorageService'] ;
+      resolveService.$inject = ['$injector', '$http','$q', 'localStorageService'] ;
 
-      function resolveService($http, $q, localStorageService) {
+      function resolveService( $injector, $http, $q, localStorageService ) {
 
-        var service = {
-          get : get ,
-          setLocalstorage : setLocalstorage,
-          getLocalstorage : getLocalstorage
-        } ;
+        return function() {
 
-        return service;
+          return $injector.instantiate( function() {
+
+            this.get = get ;
+
+            this.setLocalstorage = setLocalstorage ;
+
+            this.getLocalstorage = getLocalstorage ;
+
+          } );
+
+        }
 
         function setLocalstorage ( key, value ) {
           if ( localStorageService.isSupported  ) {
@@ -30,21 +36,42 @@
           }
         }
 
-        function get(url) {
+        function get(url, method, data) {
 
-          var defered = $q.defer();
-          var promise = defered.promise;
+          if( url ) {
 
-          $http
-            .get( url )
-            .success(function( response ){
-              defered.resolve( response ) ;
-            })
-            .error(function( error ){
-              defered.reject( error ) ;
-            }) ;
+            var defered = $q.defer();
+            var promise = defered.promise;
 
-          return promise ;
+            var params = {
+              url : url,
+              method : 'GET'
+            } ;
+
+            if(  method && typeof method === 'STRING' ){
+                params.method = method ;
+            } ;
+
+            if( data && typeof data === 'OBJECT' ) {
+              params.data = data ;
+            } ;
+
+            $http( params )
+              .success ( function( response ){
+                defered.resolve( response ) ;
+              } )
+              .error( function( error ){
+                defered.reject( error ) ;
+              } )
+
+            return promise ;
+
+          } else {
+
+            console.log ( ':: resolve.services.js -> No url on arguments.' )
+
+          }
+
         }
 
       }
