@@ -20,9 +20,9 @@
 
             this.getLocalstorage = getLocalstorage ;
 
-          } );
+          } ) ;
 
-        }
+        } ;
 
         function setLocalstorage ( key, value ) {
           if ( localStorageService.isSupported  ) {
@@ -48,13 +48,13 @@
               method : 'GET'
             } ;
 
-            if(  method && typeof method === 'STRING' ){
+            if(  method && typeof method === 'string' ){
                 params.method = method ;
-            } ;
+            }
 
-            if( data && typeof data === 'OBJECT' ) {
+            if( data && typeof data === 'object' ) {
               params.data = data ;
-            } ;
+            }
 
             $http( params )
               .success ( function( response ){
@@ -62,13 +62,13 @@
               } )
               .error( function( error ){
                 defered.reject( error ) ;
-              } )
+              } ) ;
 
             return promise ;
 
           } else {
 
-            console.log ( ':: resolve.services.js -> No url on arguments.' )
+            console.log ( ':: resolve.services.js -> No url on arguments.' ) ;
 
           }
 

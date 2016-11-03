@@ -4,7 +4,7 @@
 
   angular.module ('app.pages')
 
-      .controller('styleGuideController', styleGuideController )
+      .controller('styleGuideController', styleGuideController ) ;
 
       styleGuideController.$inject = ['data'] ;
 
@@ -14,11 +14,11 @@
 
         vm.data = data ;
 
-        activate()
+        activate() ;
 
         function activate () {
 
         }
 
       }
-})()
+})() ;
